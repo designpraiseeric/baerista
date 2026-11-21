@@ -22,8 +22,8 @@ KIND = {"scriptui-panel": "Dockable script", "cep": "Panel extension", "bar": "T
 NEEDS = {"scriptui-panel": "After Effects CC 2019 or newer", "cep": "After Effects 2022 or newer", "bar": "After Effects 2022 or newer"}
 INSTALL = {
     "scriptui-panel": "Easiest: install it from Baerista. On its own: copy the <code>.jsx</code> into After Effects' <code>Scripts/ScriptUI Panels</code> folder, restart, and open it from the Window menu. For update checks, turn on <i>Preferences › Scripting &amp; Expressions › Allow Scripts to Write Files and Access Network</i>.",
-    "cep": "Easiest: install it from Baerista, then restart After Effects once. It opens from Baerista or Window › Extensions.",
-    "bar": "Unzip into your CEP extensions folder (<code>~/Library/Application Support/Adobe/CEP/extensions</code> on macOS, <code>%APPDATA%\\Adobe\\CEP\\extensions</code> on Windows), restart After Effects and open Window › Extensions › Baerista. Every other tool installs from there.",
+    "cep": "Easiest: install it from Baerista, then restart After Effects once. On its own: install the <code>.zxp</code> for your system (Mac or Windows) with a ZXP installer, such as the free ZXP Installer from aescripts, then restart After Effects and open Window › Extensions.",
+    "bar": "Install the <code>.zxp</code> for your system (Mac or Windows) with a ZXP installer, such as the free ZXP Installer from aescripts. Restart After Effects and open Window › Extensions › Baerista. Every other tool installs from there.",
 }
 
 def esc(s): return html.escape(s, quote=True)
