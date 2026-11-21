@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "bar": {
+    "name": "Baerista",
+    "version": "0.0.0",
+    "site": "https://designpraiseeric.pages.dev/soon"
+  },
+  "tools": [
+    {
+      "id": "aline",
+      "name": "Aline",
+      "version": "2.1.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/aline/Aline.jsx",
+          "installAs": "ScriptUI Panels/Aline.jsx",
+          "sha256": "c77bae8fecf1377d7a6248ec1bffa6ef99d69fe0fd50207b277fd13e9f6512e3"
+        }
+      ],
+      "gumroad": "https://designpraiseeric.gumroad.com/l/wlaaw",
+      "changelog": "Line angle, custom reference point, Chain Drift with 15 ramps, Bounce Ease-In/Duration, Tangent Tighten."
+    },
+    {
+      "id": "compensate",
+      "name": "Compensate",
+      "version": "3.0.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/compensate/Compensate.jsx",
+          "installAs": "ScriptUI Panels/Compensate.jsx",
+          "sha256": "2988a4b5afe4da08b2c3731d381ab5f6c2d44b11326972dddf521ee3a0110caf"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Dockable panel. Drag mode: drag a precomp's out edge to add or remove frames. Fixed frame blending, early-ending layers, start-time offset and time-stretch with trims."
+    }
+  ]
+}
