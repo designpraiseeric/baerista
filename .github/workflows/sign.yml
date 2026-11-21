@@ -19,6 +19,7 @@ concurrency: sign
 jobs:
   sign:
     strategy:
+      fail-fast: false
       matrix:
         os: [macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
@@ -43,8 +44,16 @@ jobs:
             rm -rf "build/$d"; cp -R "cep/$d" "build/$d"
             # Ship exactly what the bar installs: no debug file, readme or Finder junk.
             rm -f "build/$d/.debug" "build/$d/README.md"; find "build/$d" -name .DS_Store -delete
-            $S -sign "build/$d" "out/zxp/$d-$P.zxp" cert.p12 "$CERT_PW" -tsa http://timestamp.digicert.com
-            $S -verify "out/zxp/$d-$P.zxp"
+            SRC="build/$d"; DST="out/zxp/$d-$P.zxp"
+            if [ "$P" = win ]; then SRC="$(cygpath -w "$SRC")"; DST="$(cygpath -w "$DST")"; fi
+            # A timestamp keeps the signature valid after the certificate expires; try a few servers.
+            ok=0
+            for TSA in http://timestamp.digicert.com http://timestamp.sectigo.com http://timestamp.globalsign.com/tsa/r6advanced1; do
+              if $S -sign "$SRC" "$DST" cert.p12 "$CERT_PW" -tsa "$TSA"; then ok=1; break; fi
+              echo "Signing with $TSA failed, trying the next server"
+            done
+            if [ $ok = 0 ]; then echo "Signing without a timestamp"; $S -sign "$SRC" "$DST" cert.p12 "$CERT_PW"; fi
+            $S -verify "$DST"
             mkdir -p "out/sig/$d/$P"
             unzip -o -j "out/zxp/$d-$P.zxp" META-INF/signatures.xml -d "out/sig/$d/$P"
           done
