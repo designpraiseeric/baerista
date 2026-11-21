@@ -38,7 +38,7 @@ jobs:
           else
             curl -sfL -o ZXPSignCmd "$BASE/4.1.3/macOS/ZXPSignCmd"; chmod +x ZXPSignCmd; xattr -c ZXPSignCmd || true; S=./ZXPSignCmd; P=mac
           fi
-          $S -selfSignedCert NG Lagos "DesignPraise Studio" "DesignPraise Eric" "$CERT_PW" cert.p12
+          $S -selfSignedCert NG Lagos "DesignPraise Studio" "DesignPraise Eric" "$CERT_PW" cert.p12 -validityDays 3650
           mkdir -p out/sig out/zxp build
           for d in Baerista DockView DockDocs; do
             rm -rf "build/$d"; cp -R "cep/$d" "build/$d"
