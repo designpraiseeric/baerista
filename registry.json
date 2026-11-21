@@ -146,13 +146,13 @@
         "path": "cep/_signed/Baerista/mac/signatures.xml",
         "installAs": "SELF/META-INF/signatures.xml",
         "platform": "mac",
-        "sha256": "6c0bbc10d12a6faeaabc02164c434b356536c54ca061943b4bbd9885c31aa32b"
+        "sha256": "a99f99efe66ccbfe021f73b93a2336109a2b4e02c8cc67b2d1cb2a578fe9d66f"
       },
       {
         "path": "cep/_signed/Baerista/win/signatures.xml",
         "installAs": "SELF/META-INF/signatures.xml",
         "platform": "win",
-        "sha256": "bf642f2f9992c3996e89eae01d66a63d9b6e48da7a1a005e038d5199d05cb58e"
+        "sha256": "ad8214925d72d4b3aca3a08b05524a95c89fa00edc8c3a0664376113b9c9afdd"
       }
     ],
     "changelog": "Every tool now shows its own icon. Unlock paid tools with your Gumroad licence key."
@@ -423,13 +423,13 @@
           "path": "cep/_signed/DockView/mac/signatures.xml",
           "installAs": "CEP/DockView/META-INF/signatures.xml",
           "platform": "mac",
-          "sha256": "6205f11a4b022c5736eb449ab07798819625f021d4bb2f48b238d2546958459c"
+          "sha256": "2d68e6165ddae99403529d9a8692994a5898b9ed75c6d01047b571fbc1eb2a4c"
         },
         {
           "path": "cep/_signed/DockView/win/signatures.xml",
           "installAs": "CEP/DockView/META-INF/signatures.xml",
           "platform": "win",
-          "sha256": "d5d38b53aa069bba67a7e9a81dbcf7aec322b76e23c513efaeb510402efcc1e9"
+          "sha256": "c77c0ec0a1fa6a980854927bb75af42cd4eb7bbc03190b51656d89cb75ae4ca8"
         }
       ],
       "gumroad": null,
@@ -523,13 +523,13 @@
           "path": "cep/_signed/DockDocs/mac/signatures.xml",
           "installAs": "CEP/DockDocs/META-INF/signatures.xml",
           "platform": "mac",
-          "sha256": "b1f17f134fd990015f4a1a732950a2aef00d5c3631e9c6e1e24888508964b497"
+          "sha256": "b7cbb08d026d589db1bca49fc6de458f68fd54e22dbf0797a23007f662de17b3"
         },
         {
           "path": "cep/_signed/DockDocs/win/signatures.xml",
           "installAs": "CEP/DockDocs/META-INF/signatures.xml",
           "platform": "win",
-          "sha256": "5e93b8aed024fb590c29479c182beb44aad0106d8e2a196ce0b64604d3b8ef2d"
+          "sha256": "dc765e33ff6f32b1e878d6f5f2535b1d554df632096739eaa41e4dd03af89d71"
         }
       ],
       "gumroad": null,
