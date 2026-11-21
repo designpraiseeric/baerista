@@ -1,0 +1,164 @@
+    // ── DesignPraise core (brand mark + update check) ── injected by build.py; edit lib/dp-core.jsxinc ──
+    var DP = (function () {
+        var REGISTRY = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/registry.json";
+        var RAW_BASE = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
+        var SITE = "https://designpraiseeric.pages.dev/soon";
+        var SECTION = "DesignPraise_Updates";
+        var CHECK_EVERY_HOURS = 12;
+        var IS_WIN = $.os.indexOf("Windows") !== -1;
+        var SELF = File($.fileName);
+        var MARK_LILAC = "@@PNG:dp-mark_lilac_20.png@@";
+        var MARK_WHITE = "@@PNG:dp-mark_white_20.png@@";
+
+        function sh(cmd) { try { return system.callSystem(cmd) || ""; } catch (e) { return ""; } }
+
+        function netAllowed() {
+            try { return app.preferences.getPrefAsLong("Main Pref Section", "Pref_SCRIPTING_FILE_NETWORK_SECURITY") === 1; }
+            catch (e) { return false; }
+        }
+
+        function openURL(url) {
+            if (!netAllowed()) {
+                alert("To open links, turn on Preferences > Scripting & Expressions >\n\"Allow Scripts to Write Files and Access Network\".\n\n" + url);
+                return;
+            }
+            if (IS_WIN) sh('cmd.exe /c start "" "' + url + '"');
+            else sh('open "' + url + '"');
+        }
+
+        function fetchText(url) {
+            return sh((IS_WIN ? "curl.exe" : "curl") + ' -fsSL -m 8 "' + url + '"');
+        }
+
+        function cmpVersion(a, b) {
+            var x = String(a).split("."), y = String(b).split(".");
+            for (var i = 0; i < Math.max(x.length, y.length); i++) {
+                var p = parseInt(x[i] || "0", 10), q = parseInt(y[i] || "0", 10);
+                if (p !== q) return p > q ? 1 : -1;
+            }
+            return 0;
+        }
+
+        // Reads one tool's entry from registry.json without eval.
+        function findEntry(json, id) {
+            var start = json.indexOf('"id": "' + id + '"');
+            if (start < 0) start = json.indexOf('"id":"' + id + '"');
+            if (start < 0) return null;
+            var next = json.indexOf('"id":', start + 6);
+            var block = json.substring(start, next < 0 ? json.length : next);
+            function grab(key) {
+                var m = new RegExp('"' + key + '"\\s*:\\s*"([^"]*)"').exec(block);
+                return m ? m[1] : null;
+            }
+            return { version: grab("version"), path: grab("path"), sha256: grab("sha256"), changelog: grab("changelog") || "" };
+        }
+
+        function sha256Of(file) {
+            var out;
+            if (IS_WIN) {
+                out = sh('certutil -hashfile "' + file.fsName + '" SHA256');
+                var lines = out.split(/\r?\n/);
+                return lines.length > 1 ? lines[1].replace(/\s/g, "").toLowerCase() : "";
+            }
+            out = sh('shasum -a 256 "' + file.fsName + '"');
+            return out.split(" ")[0].toLowerCase();
+        }
+
+        function installUpdate(meta, entry) {
+            var msg = meta.name + " " + entry.version + " is available (you have " + meta.version + ").";
+            if (entry.changelog) msg += "\n\n" + entry.changelog;
+            if (!confirm(msg + "\n\nUpdate now?")) return;
+
+            var tmp = File(Folder.temp.fsName + "/dp_" + meta.id + "_" + entry.version + ".jsx");
+            sh((IS_WIN ? "curl.exe" : "curl") + ' -fsSL -m 30 -o "' + tmp.fsName + '" "' + RAW_BASE + entry.path + '"');
+            if (!tmp.exists) { alert("The download didn't complete. Check your connection and try again."); return; }
+            if (entry.sha256 && sha256Of(tmp) !== entry.sha256.toLowerCase()) {
+                tmp.remove();
+                alert("The downloaded file didn't match its checksum, so nothing was changed.");
+                return;
+            }
+            if (tmp.copy(SELF.fsName)) {
+                tmp.remove();
+                alert(meta.name + " is now " + entry.version + ".\nClose this panel and reopen it from the Window menu.");
+            } else {
+                alert("After Effects couldn't overwrite the script (the folder may need admin rights).\n" +
+                      "The new version is saved here — copy it over the old one:\n\n" + tmp.fsName);
+                if (!IS_WIN) sh('open -R "' + tmp.fsName + '"');
+            }
+        }
+
+        function check(meta, badge, force) {
+            if (!netAllowed()) return;
+            var key = meta.id + "_last";
+            var now = new Date().getTime();
+            try {
+                if (!force && app.settings.haveSetting(SECTION, key)) {
+                    var last = parseFloat(app.settings.getSetting(SECTION, key));
+                    if (now - last < CHECK_EVERY_HOURS * 3600000) {
+                        // Still show a known pending update without hitting the network.
+                        if (app.settings.haveSetting(SECTION, meta.id + "_pending")) {
+                            var pv = app.settings.getSetting(SECTION, meta.id + "_pending");
+                            if (cmpVersion(pv, meta.version) > 0) showBadge(badge, pv);
+                        }
+                        return;
+                    }
+                }
+                app.settings.saveSetting(SECTION, key, String(now));
+            } catch (e) {}
+
+            var json = fetchText(REGISTRY);
+            if (!json) return;
+            var entry = findEntry(json, meta.id);
+            if (!entry || !entry.version) return;
+            try { app.settings.saveSetting(SECTION, meta.id + "_pending", entry.version); } catch (e2) {}
+            badge._entry = entry;
+            if (cmpVersion(entry.version, meta.version) > 0) showBadge(badge, entry.version);
+        }
+
+        function showBadge(badge, v) {
+            badge.text = "Update to " + v;
+            badge.visible = true;
+            try { badge.parent.layout.layout(true); } catch (e) {}
+        }
+
+        /** Adds the footer (update button + dp mark) to a ScriptUI container. */
+        function footer(parent, meta) {
+            var row = parent.add("group");
+            row.orientation = "row";
+            row.alignment = ["fill", "bottom"];
+            row.alignChildren = ["left", "center"];
+            row.margins = [0, 2, 0, 0];
+
+            var badge = row.add("button", undefined, "Update");
+            badge.visible = false;
+            badge.helpTip = "A newer version is available";
+            badge.onClick = function () {
+                if (!badge._entry) {
+                    var json = fetchText(REGISTRY);
+                    badge._entry = json ? findEntry(json, meta.id) : null;
+                }
+                if (badge._entry) installUpdate(meta, badge._entry);
+            };
+
+            var ver = row.add("statictext", undefined, meta.name + " " + meta.version);
+            ver.graphics.font = ScriptUI.newFont("dialog", "REGULAR", 9);
+            try { ver.graphics.foregroundColor = ver.graphics.newPen(ver.graphics.PenType.SOLID_COLOR, [0.55, 0.55, 0.6], 1); } catch (e) {}
+
+            var spacer = row.add("group");
+            spacer.alignment = ["fill", "center"];
+
+            var mark = row.add("iconbutton", undefined, ScriptUI.newImage(MARK_LILAC, MARK_LILAC, MARK_WHITE, MARK_WHITE), { style: "toolbutton" });
+            mark.alignment = ["right", "center"];
+            mark.helpTip = "designpraise — click to visit the site";
+            mark.onClick = function () { openURL(SITE); };
+
+            // Check after the panel has drawn, so opening it never waits on the network.
+            var cbName = "__dpUpd_" + meta.id;
+            $.global[cbName] = function () { check(meta, badge, false); };
+            try { app.scheduleTask("try{$.global." + cbName + "();}catch(e){}", 1500, false); } catch (e3) {}
+            return row;
+        }
+
+        return { footer: footer, openURL: openURL, site: SITE };
+    })();
+    // ── end DesignPraise core ──

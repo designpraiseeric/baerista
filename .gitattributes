@@ -1,0 +1,3 @@
+*.jsx -text
+*.jsxinc -text
+registry.json -text

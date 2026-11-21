@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+  <meta charset="utf-8">
+  <title>Baerista</title>
+  <link rel="stylesheet" href="css/bar.css">
+</head>
+<body>
+  <header class="top">
+    <span class="mark" id="mark" aria-hidden="true"></span>
+    <h1>Baerista</h1>
+    <span class="pill" id="status">Checking…</span>
+    <button class="icon" id="theme" title="Theme: auto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+    </button>
+  </header>
+
+  <div class="banner" id="banner" hidden>
+    <span id="bannerText"></span>
+    <button id="updateAll">Update all</button>
+  </div>
+
+  <main class="grid" id="grid" aria-live="polite"></main>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <footer class="foot">
+    <span class="barver" id="barver"></span>
+    <a class="wordmark" id="wordmark" href="#" title="designpraise — visit the site"></a>
+  </footer>
+
+  <script src="js/CSInterface.js"></script>
+  <script src="js/bar.js"></script>
+</body>
+</html>

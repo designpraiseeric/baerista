@@ -9,18 +9,18 @@
     {
       "id": "aline",
       "name": "Aline",
-      "version": "2.1.0",
+      "version": "2.1.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/aline/Aline.jsx",
           "installAs": "ScriptUI Panels/Aline.jsx",
-          "sha256": "c77bae8fecf1377d7a6248ec1bffa6ef99d69fe0fd50207b277fd13e9f6512e3"
+          "sha256": "52090e89407039af309086115814d99e9e95d2a6a43613c26bd8adc2dbef1748"
         }
       ],
       "gumroad": "https://designpraiseeric.gumroad.com/l/wlaaw",
-      "changelog": "Line angle, custom reference point, Chain Drift with 15 ramps, Bounce Ease-In/Duration, Tangent Tighten."
+      "changelog": "Update check and DesignPraise mark added. Same features as 2.1: line angle, custom reference point, Chain Drift with 15 ramps, Bounce Ease-In/Duration, Tangent Tighten."
     },
     {
       "id": "compensate",
@@ -32,11 +32,27 @@
         {
           "path": "tools/compensate/Compensate.jsx",
           "installAs": "ScriptUI Panels/Compensate.jsx",
-          "sha256": "2988a4b5afe4da08b2c3731d381ab5f6c2d44b11326972dddf521ee3a0110caf"
+          "sha256": "b514048c837468ac101ef28e9d87e0df9b040d2a45e90d41227ca21a474e5ac3"
         }
       ],
       "gumroad": null,
       "changelog": "Dockable panel. Drag mode: drag a precomp's out edge to add or remove frames. Fixed frame blending, early-ending layers, start-time offset and time-stretch with trims."
+    },
+    {
+      "id": "notable",
+      "name": "Notable",
+      "version": "2.0.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/notable/Notable.jsx",
+          "installAs": "ScriptUI Panels/Notable.jsx",
+          "sha256": "e94c48d83b934c59a7dc5d19df4fb4d469f50a90b0198efca7ff2295eb04f61e"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Several notes, saved automatically. Copy to clipboard. Post as text layer, into the selected text layer, or as a comp or layer marker. A sketch per note; Sketch to Comp keeps proportions, smooths lines and rounds the ends."
     }
   ]
 }
