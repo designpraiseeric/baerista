@@ -66,6 +66,18 @@
         "path": "cep/Baerista/js/bar.js",
         "installAs": "SELF/js/bar.js",
         "sha256": "3829dc521330abe566a1ffadd243b01b62807e1660266d5f33b8637691d99646"
+      },
+      {
+        "path": "cep/_signed/Baerista/mac/signatures.xml",
+        "installAs": "SELF/META-INF/signatures.xml",
+        "platform": "mac",
+        "sha256": "be6276974df5d4a7aaa60aab3e09b75749e7b0a5007733780bbf7eaa2724b54f"
+      },
+      {
+        "path": "cep/_signed/Baerista/win/signatures.xml",
+        "installAs": "SELF/META-INF/signatures.xml",
+        "platform": "win",
+        "sha256": "74525c15c50c70edf0780d0b617e6e3237f06633ed3e2bfe89bf622b868eda09"
       }
     ],
     "changelog": "Unlock paid tools with your Gumroad licence key. Installs panel extensions and updates itself."
@@ -331,6 +343,18 @@
           "path": "cep/DockView/host/index.jsx",
           "installAs": "CEP/DockView/host/index.jsx",
           "sha256": "034dcb2fa5f1e4da5cf445430a5b8be0b33d1ab58b7832e04032492435068294"
+        },
+        {
+          "path": "cep/_signed/DockView/mac/signatures.xml",
+          "installAs": "CEP/DockView/META-INF/signatures.xml",
+          "platform": "mac",
+          "sha256": "179844c8659e0167285243d595088c3ef3a8b0f11f07a29624020b6b10d248c7"
+        },
+        {
+          "path": "cep/_signed/DockView/win/signatures.xml",
+          "installAs": "CEP/DockView/META-INF/signatures.xml",
+          "platform": "win",
+          "sha256": "0f6486bfb2bb56b0d00fa3ea86ab61d5988bcf38e27ea38c39b18d79144e1684"
         }
       ],
       "gumroad": null,
@@ -419,6 +443,18 @@
           "path": "cep/DockDocs/js/pdf.worker.min.js",
           "installAs": "CEP/DockDocs/js/pdf.worker.min.js",
           "sha256": "38cde5311957b86bc3669f93e7d2566de333a90055ed6635bef60d9bf00e96f2"
+        },
+        {
+          "path": "cep/_signed/DockDocs/mac/signatures.xml",
+          "installAs": "CEP/DockDocs/META-INF/signatures.xml",
+          "platform": "mac",
+          "sha256": "1ebc65f017cb27e7a3bb77ce5b977dbd6d86b42dc5b0b120df1a70c3d5b0de2b"
+        },
+        {
+          "path": "cep/_signed/DockDocs/win/signatures.xml",
+          "installAs": "CEP/DockDocs/META-INF/signatures.xml",
+          "platform": "win",
+          "sha256": "76087f5666cf2fdf87e515d3488762fc2c46128611c0c1b555d40629563cfe79"
         }
       ],
       "gumroad": null,
