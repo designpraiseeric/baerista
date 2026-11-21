@@ -93,7 +93,7 @@
         {
           "path": "tools/aline/Aline.jsx",
           "installAs": "ScriptUI Panels/Aline.jsx",
-          "sha256": "52090e89407039af309086115814d99e9e95d2a6a43613c26bd8adc2dbef1748"
+          "sha256": "c362c78ae350874c5f5b22cb0af3e1269d7306a2e41a02711f03330510bfb921"
         }
       ],
       "gumroad": "https://designpraiseeric.gumroad.com/l/wlaaw",
@@ -109,7 +109,7 @@
         {
           "path": "tools/compensate/Compensate.jsx",
           "installAs": "ScriptUI Panels/Compensate.jsx",
-          "sha256": "b514048c837468ac101ef28e9d87e0df9b040d2a45e90d41227ca21a474e5ac3"
+          "sha256": "f886ebab7a37e19258b719cb89bdf29b7e99f1cffb43038dc0d9c8173b2baec5"
         }
       ],
       "gumroad": null,
@@ -125,7 +125,7 @@
         {
           "path": "tools/notable/Notable.jsx",
           "installAs": "ScriptUI Panels/Notable.jsx",
-          "sha256": "e94c48d83b934c59a7dc5d19df4fb4d469f50a90b0198efca7ff2295eb04f61e"
+          "sha256": "804b10a04aff82ead3a581d804da1d76e01fa2c90a4fe0f829264916b22dd31b"
         }
       ],
       "gumroad": null,
@@ -141,7 +141,7 @@
         {
           "path": "tools/bouncer/Bouncer.jsx",
           "installAs": "ScriptUI Panels/Bouncer.jsx",
-          "sha256": "f7bc13ab8052a43fda843be79086565c67418918930ea848b825ce3a4dc7f3c1"
+          "sha256": "c26d898a941de2e8b357d07261080e931c59de6c8a4c62fd6600421ae3a1aab2"
         }
       ],
       "gumroad": null,
@@ -157,7 +157,7 @@
         {
           "path": "tools/precompkit/PrecompKit.jsx",
           "installAs": "ScriptUI Panels/PrecompKit.jsx",
-          "sha256": "039f8aa131fec51e7c48601a9eacd0e382a97016e1565c2f09fd8d8827d2050d"
+          "sha256": "d2e015d6094bd6eb3f610269593491eb7e6b4d918e2e2043b6b1c2c722951f3e"
         }
       ],
       "gumroad": null,
@@ -173,7 +173,7 @@
         {
           "path": "tools/auff/Auff.jsx",
           "installAs": "ScriptUI Panels/Auff.jsx",
-          "sha256": "4de207c71fb5fd8ae98ac777cf5242f59f7f4c31f2039ac28317d1bcdf447ac2"
+          "sha256": "3330c0894a128bd6f6ae77dcfaac2304f375609165d5f027b79d10b33acf76b4"
         }
       ],
       "gumroad": null,
@@ -189,7 +189,7 @@
         {
           "path": "tools/compyle/Compyle.jsx",
           "installAs": "ScriptUI Panels/Compyle.jsx",
-          "sha256": "1f74bc1eb310adf2816fc27b29bf303c2219428eb284216f0682f9e29813335d"
+          "sha256": "bd44420b7908806e78de16cd35032552a1384cbf3359e4902126f1da86ee14f4"
         }
       ],
       "gumroad": null,
@@ -205,7 +205,7 @@
         {
           "path": "tools/guided/LetsBeGuided.jsx",
           "installAs": "ScriptUI Panels/LetsBeGuided.jsx",
-          "sha256": "3cd4ce5473fba5a2299782f14f5b029728d78eead5cc4803c3af67323460785c"
+          "sha256": "fc4c8b022949d1ecfd02d8b80b1ce8d1daa6a24d9868405217663a34b6b11d6e"
         }
       ],
       "gumroad": null,
@@ -221,7 +221,7 @@
         {
           "path": "tools/footlogwork/FootLogWork.jsx",
           "installAs": "ScriptUI Panels/FootLogWork.jsx",
-          "sha256": "fd0b4fa16b419588df0e5a70b893c870dcfa9d265110dd36502a486e71b758f2"
+          "sha256": "688f6c0d9edfc5d7b959cc13e746ea005ddf5c1bf095f305d2818ec429cbfe2d"
         }
       ],
       "gumroad": null,
@@ -237,7 +237,7 @@
         {
           "path": "tools/propup/PropUp.jsx",
           "installAs": "ScriptUI Panels/PropUp.jsx",
-          "sha256": "17fec2ab6daa38b26205195df0ba0fca5a2a12cec2550276310330f0f78a844e"
+          "sha256": "bbec6253854af31219083b1b386b4e6b55d4fd484ed078c9b6bf6a206946dad0"
         }
       ],
       "gumroad": null,
@@ -253,7 +253,7 @@
         {
           "path": "tools/textjam/TextJam.jsx",
           "installAs": "ScriptUI Panels/TextJam.jsx",
-          "sha256": "310953afa8f491c2b0e42dc55ef8cf87e3166c032c6dbf97fd8cd398c549d568"
+          "sha256": "ad0b6dd557298783fdabab028e61c8eee56e944fef327463e63b44eaf3b1fc3b"
         }
       ],
       "gumroad": null,
@@ -269,7 +269,7 @@
         {
           "path": "tools/slicer/Slicer.jsx",
           "installAs": "ScriptUI Panels/Slicer.jsx",
-          "sha256": "9cac2952d586406e04d54c658fb475b22b7790c5e3c40f046c8e27e839f5aea0"
+          "sha256": "57db145367fb0a2d19d5556cad0bd5425a7dccd622372893983f138b68272779"
         }
       ],
       "gumroad": null,

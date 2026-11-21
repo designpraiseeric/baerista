@@ -182,6 +182,9 @@ var TOOL = "TextJam", VERSION = "3.1.0";
             mark.helpTip = "designpraise — click to visit the site";
             mark.onClick = function () { openURL(SITE); };
 
+            // Test harness hook (only defined while Baerista's test script runs).
+            if (typeof $.global.__dpTestHook === "function") { try { $.global.__dpTestHook(meta.id, parent); } catch (eH) {} }
+
             // Check after the panel has drawn, so opening it never waits on the network.
             var cbName = "__dpUpd_" + meta.id;
             $.global[cbName] = function () { check(meta, badge, false); };
