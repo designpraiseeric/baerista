@@ -32,3 +32,22 @@ Tools the bar installs live in `~/Library/Application Support/DesignPraise/Baeri
 Standalone scripts update themselves only when **Preferences → Scripting & Expressions → Allow Scripts to Write Files and Access Network** is on.
 
 By DesignPraise (@designpraiseeric).
+
+## Paid tools
+
+Paid tools never go in this repo. They live in the private repo `designpraiseeric-tools-paid`:
+
+```
+products.json            { "<tool id>": "<Gumroad product id>" }
+paid/<tool id>/<file>    the tool's files
+```
+
+In this repo's `registry.json` a paid tool looks like any other entry, plus `"tier": "paid"`,
+`"product": "<Gumroad product id>"` and `"gumroad": "<listing URL>"`; its file paths start with `paid/`
+and carry their SHA-256 as usual. Baerista asks for the buyer's licence key and downloads through
+`designpraiseeric.pages.dev/api/paid`, which checks the key with Gumroad first.
+
+One-time setup:
+1. On each paid Gumroad product, switch on "Generate a unique license key per sale".
+2. Create a fine-grained GitHub token with Contents: read-only on `designpraiseeric-tools-paid` only.
+3. In Cloudflare (Workers & Pages → designpraiseeric → Settings → Variables and secrets) add it as `PAID_GITHUB_TOKEN`, then redeploy.

@@ -2,7 +2,7 @@
   "schema": 1,
   "bar": {
     "name": "Baerista",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "dir": "cep/Baerista",
     "extensionId": "com.designpraise.baerista.panel",
     "site": "https://designpraiseeric.pages.dev/soon",
@@ -10,17 +10,17 @@
       {
         "path": "cep/Baerista/index.html",
         "installAs": "SELF/index.html",
-        "sha256": "fd366c627620609698b5989de86f08b9d2ab4270eb66f4cff486906dd4d1c8bf"
+        "sha256": "207f4efae3664f18e52a1e03acbeebbcebe173c515925020a979cbe238466330"
       },
       {
         "path": "cep/Baerista/CSXS/manifest.xml",
         "installAs": "SELF/CSXS/manifest.xml",
-        "sha256": "2f4838744cb21ad9d8ccaabe8195afcf6318d2bba6558d6a119403f7b3da8f51"
+        "sha256": "36fd0cfd5c437644cf55669349e63ddaf0fff2cd0089258f5b9a87ab15b8fb82"
       },
       {
         "path": "cep/Baerista/css/bar.css",
         "installAs": "SELF/css/bar.css",
-        "sha256": "4fc8c4fbb6a4782aad7ab4ff6dc6a94f262e3ba864778ee0c5468be1328d46c3"
+        "sha256": "d38afa852de21c8f130ba557bc4683abfeb42a84fadca7630e536648056ab648"
       },
       {
         "path": "cep/Baerista/dp/dp-brand.css",
@@ -65,9 +65,10 @@
       {
         "path": "cep/Baerista/js/bar.js",
         "installAs": "SELF/js/bar.js",
-        "sha256": "2a9082d326e9fd0fc59d0216b23572a94ba961f86d429233bc384c7ca139a42b"
+        "sha256": "1e451062e7f1ca1bc7901a3ab519af0d948c68a1d48227d7c313bf2dcf5912b5"
       }
-    ]
+    ],
+    "changelog": "Unlock paid tools with your Gumroad licence key. Installs panel extensions and updates itself."
   },
   "tools": [
     {

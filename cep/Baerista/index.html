@@ -24,6 +24,19 @@
 
   <div class="toast" id="toast" role="status" hidden></div>
 
+  <div class="modal" id="licence" hidden>
+    <form class="sheet" id="licenceForm">
+      <h2 id="licenceTitle">Unlock</h2>
+      <p class="hint">Paste the licence key from your Gumroad receipt.</p>
+      <input id="licenceKey" type="text" autocomplete="off" spellcheck="false" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX">
+      <div class="row-btns">
+        <button type="button" id="licenceBuy" class="ghost">Buy on Gumroad</button>
+        <button type="button" id="licenceCancel" class="ghost">Cancel</button>
+        <button type="submit" class="solid">Unlock</button>
+      </div>
+    </form>
+  </div>
+
   <footer class="foot">
     <span class="barver" id="barver"></span>
     <a class="wordmark" id="wordmark" href="#" title="designpraise — visit the site"></a>

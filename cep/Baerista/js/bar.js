@@ -4,9 +4,10 @@
 (function () {
   "use strict";
 
-  var BAR_VERSION = "0.2.0";
+  var BAR_VERSION = "0.3.0";
   var REPO_RAW = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
   var SITE = "https://designpraiseeric.pages.dev/soon";
+  var PAID_API = "https://designpraiseeric.pages.dev/api/paid";
 
   var cs = new CSInterface();
   var nodeRequire = (window.cep_node && window.cep_node.require) || window.require;
@@ -99,9 +100,10 @@
       .catch(function () { return { json: readJSON(CACHE_FILE, null), offline: true }; });
   }
 
+  var licences = readJSON(path.join(HOME, "licences.json"), {});   // { toolId: key } — stays on this computer
   function statusOf(tool) {
     var have = state[tool.id];
-    if (tool.tier === "paid" && !have) return "locked";
+    if (tool.tier === "paid" && !have) return licences[tool.id] ? "available" : "locked";
     if (!have) return "available";
     return cmp(tool.version, have.version) > 0 ? "update" : "current";
   }
@@ -114,8 +116,15 @@
     var docked = false;
     return tool.files.reduce(function (p, f) {
       return p.then(function () {
-        return fetch(REPO_RAW + f.path + "?t=" + Date.now(), { cache: "no-store" })
-          .then(function (r) { if (!r.ok) throw new Error("Download failed (" + r.status + ")"); return r.arrayBuffer(); })
+        var req = f.path.indexOf("paid/") === 0
+          ? fetch(PAID_API, { method: "POST", cache: "no-store", headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ license: licences[tool.id] || "", product: tool.product || "", path: f.path }) })
+          : fetch(REPO_RAW + f.path + "?t=" + Date.now(), { cache: "no-store" });
+        return req
+          .then(function (r) {
+            if (r.ok) return r.arrayBuffer();
+            return r.json().catch(function () { return {}; }).then(function (j) { throw new Error(j.error || ("Download failed (" + r.status + ")")); });
+          })
           .then(function (ab) {
             var buf = Buffer.from(ab);
             if (f.sha256 && sha256(buf) !== f.sha256) throw new Error("Checksum mismatch — nothing was changed");
@@ -170,6 +179,28 @@
     });
   }
 
+  // ── licences for paid tools ──────────────────────────────────────
+  function askLicence(tool, tile) {
+    $("licenceTitle").textContent = "Unlock " + tool.name;
+    $("licenceKey").value = "";
+    $("licence").hidden = false;
+    $("licenceKey").focus();
+    $("licenceBuy").onclick = function () { openURL(tool.gumroad || "https://designpraiseeric.gumroad.com"); };
+    $("licenceCancel").onclick = function () { $("licence").hidden = true; };
+    $("licenceForm").onsubmit = function (e) {
+      e.preventDefault();
+      var key = $("licenceKey").value.trim();
+      if (!key) return;
+      licences[tool.id] = key;
+      $("licence").hidden = true;
+      runInstall(tool, tile).then(function () {
+        if (!state[tool.id]) { delete licences[tool.id]; }     // rejected: don't keep a bad key
+        writeJSON(path.join(HOME, "licences.json"), licences);
+        render();
+      });
+    };
+  }
+
   // ── rendering ────────────────────────────────────────────────────
   function render() {
     var grid = $("grid");
@@ -182,12 +213,12 @@
       if (st === "update") updates.push(tool);
       var have = state[tool.id];
 
-      var verb = { available: "Install", update: "Update", current: "Open", locked: "Get it" }[st];
+      var verb = { available: "Install", update: "Update", current: "Open", locked: "Unlock" }[st];
       var sub = {
         available: "v" + tool.version + " · free",
         update: (have && have.version) + " → " + tool.version,
         current: "v" + tool.version + (tool.kind === "cep" ? " · panel" : (have && have.docked ? " · docks" : " · floating")),
-        locked: "Name your price on Gumroad"
+        locked: "Paid · enter your licence"
       }[st];
       var dot = { available: "none", update: "", current: "ok", locked: "none" }[st];
 
@@ -214,7 +245,7 @@
       btn.title = tool.changelog || tool.name;
       btn.addEventListener("click", function () {
         if (st === "current") launch(tool);
-        else if (st === "locked") { if (tool.gumroad) openURL(tool.gumroad); }
+        else if (st === "locked") askLicence(tool, tile);
         else runInstall(tool, tile);
       });
       grid.appendChild(tile);

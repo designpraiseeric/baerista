@@ -109,5 +109,17 @@ h1 { font-size: 14px; font-weight: 650; letter-spacing: -.01em; margin: 0; flex:
   background: var(--ink); color: var(--bg); font-size: 11.5px; animation: rise .4s var(--out) both;
 }
 
+/* Licence sheet */
+.modal { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(11, 5, 32, .55); display: flex; align-items: flex-end; z-index: 20; }
+.sheet { width: 100%; background: var(--bg); border-top: 1px solid var(--line); border-radius: 14px 14px 0 0; padding: 14px 12px 12px; animation: rise .4s var(--out) both; }
+.sheet h2 { margin: 0 0 4px; font-size: 14px; }
+.sheet .hint { margin: 0 0 10px; color: var(--mute); font-size: 11.5px; }
+.sheet input { width: 100%; padding: 8px 9px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: 11.5px var(--mono); }
+.sheet input:focus { outline: none; border-color: var(--accent); }
+.row-btns { display: flex; gap: 6px; margin-top: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.row-btns button { border-radius: 8px; padding: 6px 10px; font-weight: 600; }
+.row-btns .ghost { background: transparent; border: 1px solid var(--line); }
+.row-btns .solid { background: var(--accent); color: var(--onaccent); border: 0; }
+
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
