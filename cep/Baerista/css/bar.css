@@ -93,6 +93,9 @@ h1 { font-size: 14px; font-weight: 650; letter-spacing: -.01em; margin: 0; flex:
 }
 .tile.busy .front { opacity: .55; }
 .tile.locked .mono { background: transparent; border: 1px dashed var(--line); }
+.mono.has-ico { width: 28px; height: 28px; background: none; border: 0; border-radius: 8px; box-shadow: 0 4px 12px -6px rgba(100, 3, 238, .7); }
+.mono .ico { width: 100%; height: 100%; display: block; border-radius: 8px; }
+.tile.locked .mono.has-ico { border: 0; opacity: .55; filter: saturate(.4); box-shadow: none; }
 
 /* Footer */
 .foot { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px 10px; border-top: 1px solid var(--line); }

@@ -4,7 +4,8 @@
 (function () {
   "use strict";
 
-  var BAR_VERSION = "0.3.0";
+  var BAR_VERSION = "0.3.1";
+  var ICON_BASE = "https://designpraiseeric.pages.dev/img/icons/";
   var REPO_RAW = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
   var SITE = "https://designpraiseeric.pages.dev/soon";
   var PAID_API = "https://designpraiseeric.pages.dev/api/paid";
@@ -60,6 +61,21 @@
   function monogram(name) {
     var parts = name.replace(/[^A-Za-z ]/g, "").split(" ");
     return (parts.length > 1 ? parts[0][0] + parts[1][0] : name.slice(0, 2)).replace(/^(.)(.)/, function (m, a, b) { return a.toUpperCase() + b.toLowerCase(); });
+  }
+  // Tool icon: bundled copy first, then the site's copy (for tools newer than this bar), then the monogram.
+  function setIcon(slot, tool) {
+    var img = document.createElement("img"), tries = [];
+    tries.push("img/icons/" + tool.id + ".svg");
+    if (tool.icon) tries.push(tool.icon);
+    tries.push(ICON_BASE + tool.id + ".svg");
+    img.className = "ico"; img.alt = "";
+    img.onerror = function () {
+      if (tries.length) { img.src = tries.shift(); return; }
+      slot.classList.remove("has-ico"); slot.innerHTML = ""; slot.textContent = monogram(tool.name);
+    };
+    slot.classList.add("has-ico");
+    slot.appendChild(img);
+    img.src = tries.shift();
   }
   function openURL(url) { cs.openURLInDefaultBrowser(url); }
 
@@ -237,7 +253,7 @@
             '<span class="verb"></span><span class="sub"></span><button></button>' +
           '</div>' +
         '</div>';
-      tile.querySelector(".mono").textContent = monogram(tool.name);
+      setIcon(tile.querySelector(".mono"), tool);
       tile.querySelector(".name").textContent = tool.name;
       tile.querySelector(".ver").textContent = have ? "v" + have.version + (st === "update" ? " · update" : "") : (st === "locked" ? "paid" : "not installed");
       tile.querySelector(".verb").textContent = verb;

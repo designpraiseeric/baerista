@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest Version="7.0" ExtensionBundleId="com.designpraise.baerista" ExtensionBundleVersion="0.3.0" ExtensionBundleName="Baerista">
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.designpraise.baerista" ExtensionBundleVersion="0.3.1" ExtensionBundleName="Baerista">
   <ExtensionList>
-    <Extension Id="com.designpraise.baerista.panel" Version="0.3.0" />
+    <Extension Id="com.designpraise.baerista.panel" Version="0.3.1" />
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>

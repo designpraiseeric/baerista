@@ -24,6 +24,11 @@ def build_cep(reg):
     shared = os.path.join(ROOT, "cep", "_shared")
     wordmark = open(os.path.join(ROOT, "cep", "Baerista", "img", "wordmark.svg"), encoding="utf-8").read()
     wordmark = wordmark.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "")
+    # Tool icons for the bar, from the same source as the website (site/icons.py).
+    sys.path.insert(0, os.path.join(ROOT, "site")); import icons as ICONS
+    idir = os.path.join(ROOT, "cep", "Baerista", "img", "icons"); os.makedirs(idir, exist_ok=True)
+    for k in ICONS.ORDER:
+        open(os.path.join(idir, k + ".svg"), "w", encoding="utf-8", newline="\n").write(ICONS.tile(k))
     entries = [t for t in reg["tools"] if t.get("kind") == "cep"]
     if reg.get("bar", {}).get("dir"):
         entries.append(reg["bar"])

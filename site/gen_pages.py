@@ -11,6 +11,7 @@ import html, json, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "site"))
 from content import PAGES, ORDER
+import icons as ICONS
 
 SHOP = "https://designpraiseeric.gumroad.com"
 MARK_SVG = open(os.path.join(ROOT, "cep", "Baerista", "img", "mark.svg"), encoding="utf-8").read()
@@ -28,7 +29,7 @@ INSTALL = {
 
 def esc(s): return html.escape(s, quote=True)
 
-def head(title, desc):
+def head(title, desc, icon="/favicon.svg"):
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -39,7 +40,7 @@ def head(title, desc):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta name="theme-color" content="#0e0820">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{icon}" type="image/svg+xml">
 <script>try{{document.documentElement.dataset.theme=localStorage.getItem("dp-theme")||"dark"}}catch(e){{document.documentElement.dataset.theme="dark"}}</script>
 <link rel="stylesheet" href="/tools/tools.css">
 </head>
@@ -63,10 +64,11 @@ def tool_page(tid, p, entry):
     kind = "bar" if tid == "baerista" else entry.get("kind", "scriptui-panel")
     version = entry["version"]
     buy = entry.get("gumroad") or SHOP
-    out = head(f'{p["name"]} — After Effects {"toolbar" if kind == "bar" else "tool"} by DesignPraise Eric', p["lede"])
+    out = head(f'{p["name"]} — After Effects {"toolbar" if kind == "bar" else "tool"} by DesignPraise Eric', p["lede"], f"/img/icons/{tid}.svg")
     out += f'''<main>
 <div class="hero split">
   <div>
+    <img class="appicon rise" src="/img/icons/{tid}.svg" width="76" height="76" alt="">
     <div class="kicker rise"><span class="pill">{esc(p["tag"])}</span><span>v{esc(version)}</span></div>
     <h1 class="rise r2">{esc(p["name"])}</h1>
     <p class="lede rise r3">{esc(p["lede"])}</p>
@@ -126,7 +128,7 @@ def index_page(reg_by_id):
         v = reg_by_id[tid]["version"]
         mono = "".join(w[0] for w in p["name"].split()[:2]) if " " in p["name"] else p["name"][:2]
         out += f'''<a class="card" href="/tools/{tid}/"><div class="c">
-  <div class="f"><span class="mono">{esc(mono)}</span><div><h3>{esc(p["name"])}</h3><p>{esc(p["tag"])}</p></div><span class="v">v{esc(v)}</span></div>
+  <div class="f"><img class="ico" src="/img/icons/{tid}.svg" width="42" height="42" alt=""><div><h3>{esc(p["name"])}</h3><p>{esc(p["tag"])}</p></div><span class="v">v{esc(v)}</span></div>
   <div class="f b"><h3>{esc(p["name"])}</h3><p>{esc(p["lede"])}</p></div>
 </div></a>
 '''
@@ -138,6 +140,9 @@ def main():
     reg = json.load(open(os.path.join(ROOT, "registry.json")))
     by_id = {t["id"]: t for t in reg["tools"]}
     by_id["baerista"] = {"version": reg["bar"]["version"], "gumroad": reg["bar"].get("gumroad"), "changelog": reg["bar"].get("changelog"), "kind": "bar"}
+    idir = os.path.join(site, "img", "icons"); os.makedirs(idir, exist_ok=True)
+    for tid in ORDER:
+        open(os.path.join(idir, tid + ".svg"), "w", encoding="utf-8").write(ICONS.tile(tid))
     for tid in ORDER:
         d = os.path.join(site, "tools", tid)
         os.makedirs(d, exist_ok=True)

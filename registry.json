@@ -2,7 +2,7 @@
   "schema": 1,
   "bar": {
     "name": "Baerista",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "dir": "cep/Baerista",
     "extensionId": "com.designpraise.baerista.panel",
     "site": "https://designpraiseeric.pages.dev/soon",
@@ -15,12 +15,12 @@
       {
         "path": "cep/Baerista/CSXS/manifest.xml",
         "installAs": "SELF/CSXS/manifest.xml",
-        "sha256": "36fd0cfd5c437644cf55669349e63ddaf0fff2cd0089258f5b9a87ab15b8fb82"
+        "sha256": "cf95b9e5ea67603de6acc3427dbc98a6323544de3b4447c6d65cc510a3f64f1d"
       },
       {
         "path": "cep/Baerista/css/bar.css",
         "installAs": "SELF/css/bar.css",
-        "sha256": "d38afa852de21c8f130ba557bc4683abfeb42a84fadca7630e536648056ab648"
+        "sha256": "2ed65272d0c23e5aa60295ac8e9dd7e0853bdc5121946cdcdb46e83bd08d0080"
       },
       {
         "path": "cep/Baerista/dp/dp-brand.css",
@@ -58,6 +58,81 @@
         "sha256": "356f009f005adebe9fae4a0914a06b57f5adb8da114a24e893298d5a8782a63f"
       },
       {
+        "path": "cep/Baerista/img/icons/aline.svg",
+        "installAs": "SELF/img/icons/aline.svg",
+        "sha256": "c71a1d2473f0b4cc8daf3d849d55e00a5b0b222241ed308faf0ead1789595b66"
+      },
+      {
+        "path": "cep/Baerista/img/icons/auff.svg",
+        "installAs": "SELF/img/icons/auff.svg",
+        "sha256": "9db16c7e162683c1166dc9ff4f0df9d683b7c43af4d20a46293f0fec83b195fb"
+      },
+      {
+        "path": "cep/Baerista/img/icons/baerista.svg",
+        "installAs": "SELF/img/icons/baerista.svg",
+        "sha256": "e646e644b905816b552260645e10cf8980b39f8fb6d3db1eb9f4741937ba472b"
+      },
+      {
+        "path": "cep/Baerista/img/icons/bouncer.svg",
+        "installAs": "SELF/img/icons/bouncer.svg",
+        "sha256": "b4c91f1828c1c3763bdd0d435f5af3affe168f7f55ca31cfa1d5f87e62201191"
+      },
+      {
+        "path": "cep/Baerista/img/icons/compensate.svg",
+        "installAs": "SELF/img/icons/compensate.svg",
+        "sha256": "06242f47e977848ef614bde9bcb4bd34319b14dee94386be31b8f2d4af1b2bfc"
+      },
+      {
+        "path": "cep/Baerista/img/icons/compyle.svg",
+        "installAs": "SELF/img/icons/compyle.svg",
+        "sha256": "880c6d5e5e2ed8217c721943635aa13cb1b461b649055904cd3fcf695a6dbcfa"
+      },
+      {
+        "path": "cep/Baerista/img/icons/dockdocs.svg",
+        "installAs": "SELF/img/icons/dockdocs.svg",
+        "sha256": "53de96e11b8996acd0fa3c5d52dd786577f5dfaaac07206852a52dd0b06a2393"
+      },
+      {
+        "path": "cep/Baerista/img/icons/dockview.svg",
+        "installAs": "SELF/img/icons/dockview.svg",
+        "sha256": "1c2f0971e5fb2dced2a0f96b6e2960881e4ad6b0f069c979fde4545640c2b12c"
+      },
+      {
+        "path": "cep/Baerista/img/icons/footlogwork.svg",
+        "installAs": "SELF/img/icons/footlogwork.svg",
+        "sha256": "580c3266f9e141f32e5ec80ea74743f6296d287f3e904b6d9ca1c8b027dbf284"
+      },
+      {
+        "path": "cep/Baerista/img/icons/guided.svg",
+        "installAs": "SELF/img/icons/guided.svg",
+        "sha256": "6e9ca78cff5ebf33d6c4dab7c5860a001a05acd2961d37096a44f9681191baf2"
+      },
+      {
+        "path": "cep/Baerista/img/icons/notable.svg",
+        "installAs": "SELF/img/icons/notable.svg",
+        "sha256": "a1086dfc8a208e026dc5488bdfc61eac5454284a79803ec690e82d21fff315d0"
+      },
+      {
+        "path": "cep/Baerista/img/icons/precompkit.svg",
+        "installAs": "SELF/img/icons/precompkit.svg",
+        "sha256": "3a2c6463005f65019788b99fb12a7488a37d851257099f3e63b612c08fd85a52"
+      },
+      {
+        "path": "cep/Baerista/img/icons/propup.svg",
+        "installAs": "SELF/img/icons/propup.svg",
+        "sha256": "e6ea726e6a027e5c4f165dfc72f1935aeb64cd699682b01a76cc2bd84e877242"
+      },
+      {
+        "path": "cep/Baerista/img/icons/slicer.svg",
+        "installAs": "SELF/img/icons/slicer.svg",
+        "sha256": "5b56eda06ea32e2148deab5590eb509601660147106e21011d35294d3c2dfa96"
+      },
+      {
+        "path": "cep/Baerista/img/icons/textjam.svg",
+        "installAs": "SELF/img/icons/textjam.svg",
+        "sha256": "e30cfd21710a6f650faea6eeda4ca3069b9c7c782fed275c7128178762313a44"
+      },
+      {
         "path": "cep/Baerista/js/CSInterface.js",
         "installAs": "SELF/js/CSInterface.js",
         "sha256": "3c45400984772b88cdf4604b4763a29219f8071fdedb9a1fa19d997349003783"
@@ -65,7 +140,7 @@
       {
         "path": "cep/Baerista/js/bar.js",
         "installAs": "SELF/js/bar.js",
-        "sha256": "3829dc521330abe566a1ffadd243b01b62807e1660266d5f33b8637691d99646"
+        "sha256": "e0c3055cd0c857acdac66f122cd071dd76e060950db1b20f2d2672e7ad7d298d"
       },
       {
         "path": "cep/_signed/Baerista/mac/signatures.xml",
@@ -80,7 +155,7 @@
         "sha256": "bf642f2f9992c3996e89eae01d66a63d9b6e48da7a1a005e038d5199d05cb58e"
       }
     ],
-    "changelog": "Unlock paid tools with your Gumroad licence key. Installs panel extensions and updates itself."
+    "changelog": "Every tool now shows its own icon. Unlock paid tools with your Gumroad licence key."
   },
   "tools": [
     {
