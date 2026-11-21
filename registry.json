@@ -134,18 +134,18 @@
     {
       "id": "bouncer",
       "name": "Bouncer",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/bouncer/Bouncer.jsx",
           "installAs": "ScriptUI Panels/Bouncer.jsx",
-          "sha256": "c26d898a941de2e8b357d07261080e931c59de6c8a4c62fd6600421ae3a1aab2"
+          "sha256": "10249422558df37d5fceafed0dd9ed796caa7c131ac255c5b1e9867f1cf96468"
         }
       ],
       "gumroad": null,
-      "changelog": "One tool for overshoot and bounce. Live mode adds an expression with sliders in Effect Controls; Bake mode writes a damped-spring curve between selected keyframes and always lands on the end key."
+      "changelog": "Fixes Live mode on 2D layers: the expression no longer errors on Position. One tool for overshoot and bounce. Live mode adds an expression with sliders in Effect Controls; Bake mode writes a damped-spring curve between selected keyframes and always lands on the end key."
     },
     {
       "id": "precompkit",

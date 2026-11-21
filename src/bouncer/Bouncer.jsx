@@ -13,7 +13,7 @@
 
 (function (thisObj) {
     var TOOL = "Bouncer";
-    var VERSION = "1.0.0";
+    var VERSION = "1.0.1";
     var SETTINGS = "DesignPraise_Bouncer";
     var TAG = "// Baerista · Bouncer";
 
@@ -71,7 +71,7 @@
         if (dims > 1 && dims < 4) {
             e += "  var on = [" + q("X") + ", " + q("Y") + (dims === 3 ? ", " + q("Z") : "") + "];\n" +
                  "  var out = value.slice(0);\n" +
-                 "  for (var i = 0; i < on.length; i++) if (on[i] == 1) out[i] += v[i] * k;\n" +
+                 "  for (var i = 0; i < out.length && i < on.length; i++) if (on[i] == 1) out[i] += v[i] * k;\n" +
                  "  out;\n";
         } else {
             e += "  add(value, mul(v, k));\n";
@@ -90,6 +90,8 @@
                 var p = pick.props[i];
                 if (p.numKeys < 1) { noKeys++; continue; }
                 var L = layerOf(p), pfx = controlPrefix(p), dims = NUMERIC[p.propertyValueType];
+                // Spatial properties on a 2D layer report 3 values to scripts but only 2 to expressions.
+                if (dims === 3 && p.propertyValueType === PropertyValueType.ThreeD_SPATIAL && !L.threeDLayer) dims = 2;
                 getOrMakeControl(L, pfx + " Amplitude", "ADBE Slider Control", amp);
                 getOrMakeControl(L, pfx + " Frequency", "ADBE Slider Control", freq);
                 getOrMakeControl(L, pfx + " Decay", "ADBE Slider Control", decay);
