@@ -114,7 +114,9 @@
   function installTool(tool) {
     var written = [];
     var docked = false;
-    return tool.files.reduce(function (p, f) {
+    var plat = process.platform === "win32" ? "win" : "mac";
+    var files = tool.files.filter(function (f) { return !f.platform || f.platform === plat; });
+    return files.reduce(function (p, f) {
       return p.then(function () {
         var req = f.path.indexOf("paid/") === 0
           ? fetch(PAID_API, { method: "POST", cache: "no-store", headers: { "Content-Type": "application/json" },

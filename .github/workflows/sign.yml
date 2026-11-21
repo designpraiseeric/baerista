@@ -1,0 +1,77 @@
+name: Sign panel extensions
+
+# Signs Baerista, DockView and DockDocs on macOS and on Windows (Adobe advises signing
+# on the platform the extension will run on), then commits each platform's
+# META-INF/signatures.xml to cep/_signed/ and the .zxp files to dist/, and refreshes
+# registry.json so the bar installs the right signature for each computer.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['cep/Baerista/**', 'cep/DockView/**', 'cep/DockDocs/**']
+
+permissions:
+  contents: write
+
+concurrency: sign
+
+jobs:
+  sign:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@v4
+      - name: Sign
+        shell: bash
+        env:
+          CERT_PW: ${{ secrets.ZXP_CERT_PASSWORD || 'designpraise-selfsigned' }}
+        run: |
+          set -e
+          BASE=https://raw.githubusercontent.com/Adobe-CEP/CEP-Resources/master/ZXPSignCMD
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            curl -sfL -o ZXPSignCmd.exe "$BASE/4.1.103/win64/ZXPSignCmd.exe"; S=./ZXPSignCmd.exe; P=win
+          else
+            curl -sfL -o ZXPSignCmd "$BASE/4.1.3/macOS/ZXPSignCmd"; chmod +x ZXPSignCmd; xattr -c ZXPSignCmd || true; S=./ZXPSignCmd; P=mac
+          fi
+          $S -selfSignedCert NG Lagos "DesignPraise Studio" "DesignPraise Eric" "$CERT_PW" cert.p12
+          mkdir -p out/sig out/zxp build
+          for d in Baerista DockView DockDocs; do
+            rm -rf "build/$d"; cp -R "cep/$d" "build/$d"
+            # Ship exactly what the bar installs: no debug file, readme or Finder junk.
+            rm -f "build/$d/.debug" "build/$d/README.md"; find "build/$d" -name .DS_Store -delete
+            $S -sign "build/$d" "out/zxp/$d-$P.zxp" cert.p12 "$CERT_PW" -tsa http://timestamp.digicert.com
+            $S -verify "out/zxp/$d-$P.zxp"
+            mkdir -p "out/sig/$d/$P"
+            unzip -o -j "out/zxp/$d-$P.zxp" META-INF/signatures.xml -d "out/sig/$d/$P"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: signed-${{ matrix.os }}
+          path: out
+
+  commit:
+    needs: sign
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Commit signatures and installers
+        run: |
+          set -e
+          mkdir -p cep/_signed dist
+          for a in artifacts/*; do
+            cp -R "$a/sig/." cep/_signed/
+            cp "$a"/zxp/*.zxp dist/
+          done
+          python3 build.py
+          git config user.name "designpraiseeric"
+          git config user.email "designpraiseeric@users.noreply.github.com"
+          git add cep/_signed dist registry.json
+          git diff --cached --quiet || git commit -m "Sign panel extensions [skip ci]"
+          git push

@@ -17,7 +17,7 @@ def build_core():
     core = open(os.path.join(ROOT, "lib", "dp-core.jsxinc"), encoding="utf-8").read()
     return re.sub(r'"@@PNG:([^@]+)@@"', lambda m: png_literal(m.group(1)), core)
 
-CEP_SKIP = {".debug", "README.md", ".DS_Store"}
+CEP_SKIP = {".debug", "README.md", ".DS_Store"}   # must match what the signing workflow strips
 
 def build_cep(reg):
     """Copy cep/_shared into each extension's dp/ folder, then list every file with its checksum."""
@@ -47,6 +47,12 @@ def build_cep(reg):
                 rel = os.path.relpath(full, ext_dir).replace(os.sep, "/")
                 files.append({"path": entry["dir"] + "/" + rel, "installAs": prefix + "/" + rel,
                               "sha256": hashlib.sha256(open(full, "rb").read()).hexdigest()})
+        # Platform signatures from the signing workflow (cep/_signed/<Ext>/<mac|win>/signatures.xml).
+        for plat in ("mac", "win"):
+            sig = os.path.join(ROOT, "cep", "_signed", name, plat, "signatures.xml")
+            if os.path.exists(sig):
+                files.append({"path": f"cep/_signed/{name}/{plat}/signatures.xml", "installAs": prefix + "/META-INF/signatures.xml",
+                              "platform": plat, "sha256": hashlib.sha256(open(sig, "rb").read()).hexdigest()})
         entry["files"] = files
         print(f"built {entry['dir']}  {entry['version']}  {len(files)} files")
 

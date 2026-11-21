@@ -65,7 +65,7 @@
       {
         "path": "cep/Baerista/js/bar.js",
         "installAs": "SELF/js/bar.js",
-        "sha256": "1e451062e7f1ca1bc7901a3ab519af0d948c68a1d48227d7c313bf2dcf5912b5"
+        "sha256": "3829dc521330abe566a1ffadd243b01b62807e1660266d5f33b8637691d99646"
       }
     ],
     "changelog": "Unlock paid tools with your Gumroad licence key. Installs panel extensions and updates itself."
