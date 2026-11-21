@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var BAR_VERSION = "0.1.0";
+  var BAR_VERSION = "0.2.0";
   var REPO_RAW = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
   var SITE = "https://designpraiseeric.pages.dev/soon";
 
@@ -18,6 +18,11 @@
   var TOOLS_DIR = path.join(HOME, "tools");
   var STATE_FILE = path.join(HOME, "installed.json");
   var CACHE_FILE = path.join(HOME, "registry-cache.json");
+  // User-level CEP extensions folder (no admin rights needed).
+  var CEP_EXT = process.platform === "win32"
+    ? path.join(process.env.APPDATA || path.join(os.homedir(), "AppData", "Roaming"), "Adobe", "CEP", "extensions")
+    : path.join(os.homedir(), "Library", "Application Support", "Adobe", "CEP", "extensions");
+  var SELF_DIR = cs.getSystemPath(SystemPath.EXTENSION);
 
   var $ = function (id) { return document.getElementById(id); };
   var state = readJSON(STATE_FILE, {});      // { id: { version, files: [localPath] } }
@@ -114,9 +119,13 @@
           .then(function (ab) {
             var buf = Buffer.from(ab);
             if (f.sha256 && sha256(buf) !== f.sha256) throw new Error("Checksum mismatch — nothing was changed");
-            var name = path.basename(f.installAs || f.path);
-            var local = path.join(TOOLS_DIR, name);
-            fs.mkdirSync(TOOLS_DIR, { recursive: true });
+            var as = f.installAs || f.path;
+            var name = path.basename(as);
+            var local;
+            if (as.indexOf("CEP/") === 0) local = path.join(CEP_EXT, as.slice(4));          // panel extension
+            else if (as.indexOf("SELF/") === 0) local = path.join(SELF_DIR, as.slice(5));   // the bar itself
+            else local = path.join(TOOLS_DIR, name);                                       // ScriptUI script
+            fs.mkdirSync(path.dirname(local), { recursive: true });
             fs.writeFileSync(local, buf);
             written.push(local);
             // Dockable copy, if After Effects' panels folder is writable.
@@ -126,6 +135,7 @@
           });
       });
     }, Promise.resolve()).then(function () {
+      if (!tool.id) return { docked: false, wasInstalled: true };      // the bar updating itself
       var wasInstalled = !!state[tool.id];
       state[tool.id] = { version: tool.version, files: written, docked: docked, at: new Date().toISOString() };
       writeJSON(STATE_FILE, state);
@@ -136,7 +146,8 @@
   function runInstall(tool, tile) {
     tile.classList.add("busy");
     return installTool(tool).then(function (res) {
-      if (res.wasInstalled) toast(tool.name + " updated to " + tool.version + ". Reopen its panel to load it.");
+      if (tool.kind === "cep") toast(tool.name + (res.wasInstalled ? " updated. Close and reopen its panel." : " installed. Restart After Effects once, then open it here or from Window › Extensions."), 6000);
+      else if (res.wasInstalled) toast(tool.name + " updated to " + tool.version + ". Reopen its panel to load it.");
       else if (res.docked) toast(tool.name + " installed. Restart After Effects to dock it; until then it opens floating.", 5500);
       else toast(tool.name + " installed. It opens as a floating panel.", 4500);
     }).catch(function (e) {
@@ -147,6 +158,11 @@
   function launch(tool) {
     var have = state[tool.id];
     if (!have || !have.files.length) return;
+    if (tool.kind === "cep") {
+      try { cs.requestOpenExtension(tool.extensionId, ""); }
+      catch (e) { toast("Open it from Window › Extensions › " + tool.name + "."); }
+      return;
+    }
     var file = have.files[0];
     evalHost("baerista_launch", [path.basename(file), file]).then(function (res) {
       if (res === "missing") { toast("The file is missing — reinstalling."); delete state[tool.id]; writeJSON(STATE_FILE, state); render(); }
@@ -170,7 +186,7 @@
       var sub = {
         available: "v" + tool.version + " · free",
         update: (have && have.version) + " → " + tool.version,
-        current: "v" + tool.version + (have && have.docked ? " · docks" : " · floating"),
+        current: "v" + tool.version + (tool.kind === "cep" ? " · panel" : (have && have.docked ? " · docks" : " · floating")),
         locked: "Name your price on Gumroad"
       }[st];
       var dot = { available: "none", update: "", current: "ok", locked: "none" }[st];
@@ -219,8 +235,14 @@
     var bv = $("barver");
     bv.textContent = "Baerista " + BAR_VERSION;
     if (registry.bar && cmp(registry.bar.version, BAR_VERSION) > 0) {
-      bv.innerHTML = 'Baerista ' + BAR_VERSION + ' · <a href="#">' + registry.bar.version + ' available</a>';
-      bv.querySelector("a").onclick = function (e) { e.preventDefault(); openURL(registry.bar.download || "https://github.com/designpraiseeric/baerista"); };
+      bv.innerHTML = 'Baerista ' + BAR_VERSION + ' · <a href="#">update to ' + registry.bar.version + '</a>';
+      bv.querySelector("a").onclick = function (e) {
+        e.preventDefault();
+        if (!registry.bar.files || !registry.bar.files.length) { openURL("https://github.com/designpraiseeric/baerista"); return; }
+        toast("Updating Baerista…");
+        installTool(registry.bar).then(function () { location.reload(); })
+          .catch(function (err) { toast("Baerista update failed: " + err.message, 5000); });
+      };
     }
   }
 

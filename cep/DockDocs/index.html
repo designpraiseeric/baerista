@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html data-theme="night">
+<head>
+  <meta charset="utf-8">
+  <title>DockDocs</title>
+  <link rel="stylesheet" href="dp/dp-brand.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="toolbar">
+      <button id="btnOpen" title="Open file (PDF, TXT, MD, RTF, image)">Open…</button>
+      <button id="btnZoomOut" title="Zoom out">–</button>
+      <span id="zoomLabel">100%</span>
+      <button id="btnZoomIn" title="Zoom in">+</button>
+      <input type="text" id="searchBox" placeholder="Find in document…">
+      <div class="spacer"></div>
+      <button id="btnReload" title="Reload current file from disk">⟳</button>
+    </div>
+
+    <div id="tabstrip"></div>
+
+    <div id="content">
+      <div id="emptyState">
+        <div>No document open</div>
+        <div class="hint">
+          Click "Open…" to pick a PDF, TXT, MD, RTF, DOCX, or image. Drop a
+          file here to open it. This panel docks anywhere in the After
+          Effects workspace like any native panel — drag its tab into a
+          dock zone.
+        </div>
+      </div>
+      <div id="dropOverlay">Drop to open</div>
+    </div>
+
+    <div class="dp-foot" data-id="dockdocs" data-name="DockDocs" data-version="1.1.0"></div>
+  </div>
+
+  <script src="js/CSInterface.js"></script>
+  <script src="dp/dp-brand.js"></script>
+  <script src="js/pdf.min.js"></script>
+  <script src="js/marked.min.js"></script>
+  <script src="js/mammoth.browser.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

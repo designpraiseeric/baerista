@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>DockView Sign-in</title>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #1f1f1f; }
+    #bar {
+      display: flex; align-items: center; gap: 8px;
+      background: #2b2b2b; color: #ccc; padding: 6px 8px;
+      font: 12px -apple-system, sans-serif; border-bottom: 1px solid #111;
+    }
+    #bar input {
+      flex: 1 1 auto; background: #1a1a1a; color: #eee; border: 1px solid #333;
+      border-radius: 3px; padding: 4px 6px; font: 12px monospace;
+    }
+    #bar button {
+      background: #3f3f3f; color: #eee; border: 1px solid #111; border-radius: 3px;
+      padding: 4px 10px; cursor: pointer; font: 12px -apple-system, sans-serif;
+    }
+    #bar button:hover { background: #4a4a4a; }
+    #hint { font: 11px -apple-system, sans-serif; color: #888; padding: 4px 8px; }
+  </style>
+</head>
+<body>
+  <div id="bar">
+    <input id="url-input" type="text" placeholder="Sign-in URL" />
+    <button id="go">Go</button>
+  </div>
+  <div id="hint">Sign in normally here, then close this window and click Reload (&#8635;) on the tab back in DockView.</div>
+  <script src="lib/CSInterface.js"></script>
+  <script src="signin.js"></script>
+</body>
+</html>

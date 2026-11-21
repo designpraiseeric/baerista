@@ -2,8 +2,72 @@
   "schema": 1,
   "bar": {
     "name": "Baerista",
-    "version": "0.0.0",
-    "site": "https://designpraiseeric.pages.dev/soon"
+    "version": "0.2.0",
+    "dir": "cep/Baerista",
+    "extensionId": "com.designpraise.baerista.panel",
+    "site": "https://designpraiseeric.pages.dev/soon",
+    "files": [
+      {
+        "path": "cep/Baerista/index.html",
+        "installAs": "SELF/index.html",
+        "sha256": "fd366c627620609698b5989de86f08b9d2ab4270eb66f4cff486906dd4d1c8bf"
+      },
+      {
+        "path": "cep/Baerista/CSXS/manifest.xml",
+        "installAs": "SELF/CSXS/manifest.xml",
+        "sha256": "2f4838744cb21ad9d8ccaabe8195afcf6318d2bba6558d6a119403f7b3da8f51"
+      },
+      {
+        "path": "cep/Baerista/css/bar.css",
+        "installAs": "SELF/css/bar.css",
+        "sha256": "4fc8c4fbb6a4782aad7ab4ff6dc6a94f262e3ba864778ee0c5468be1328d46c3"
+      },
+      {
+        "path": "cep/Baerista/dp/dp-brand.css",
+        "installAs": "SELF/dp/dp-brand.css",
+        "sha256": "1a9212c730467ba5f600695ce49348f7c4cac339bf0b498b9bf0c068eb18f241"
+      },
+      {
+        "path": "cep/Baerista/dp/dp-brand.js",
+        "installAs": "SELF/dp/dp-brand.js",
+        "sha256": "baec73177d2340a559994e91fe5a1172cdcdf7f6e61bbcf678d063e65e9cbf2f"
+      },
+      {
+        "path": "cep/Baerista/dp/fonts/DesignPraiseSans.woff2",
+        "installAs": "SELF/dp/fonts/DesignPraiseSans.woff2",
+        "sha256": "2217561b61b32021fd71203925f5966cb81fe02a8907a6790b4c930e047d3a91"
+      },
+      {
+        "path": "cep/Baerista/dp/fonts/GoogleSansCode.woff2",
+        "installAs": "SELF/dp/fonts/GoogleSansCode.woff2",
+        "sha256": "98eee6fe6dc8f6341f80caf9c7e72a5241dd78188d403a12bc6aeb23a3e8c1a3"
+      },
+      {
+        "path": "cep/Baerista/host/host.jsx",
+        "installAs": "SELF/host/host.jsx",
+        "sha256": "74496f438eb3c48f3f5662718fa9010ef189f4d9772f3f4a9b084ce9932f574b"
+      },
+      {
+        "path": "cep/Baerista/img/mark.svg",
+        "installAs": "SELF/img/mark.svg",
+        "sha256": "68b04fa194cdb12921473b374e29125d2f96308d98d6057d9a8b046dd1239d91"
+      },
+      {
+        "path": "cep/Baerista/img/wordmark.svg",
+        "installAs": "SELF/img/wordmark.svg",
+        "sha256": "356f009f005adebe9fae4a0914a06b57f5adb8da114a24e893298d5a8782a63f"
+      },
+      {
+        "path": "cep/Baerista/js/CSInterface.js",
+        "installAs": "SELF/js/CSInterface.js",
+        "sha256": "3c45400984772b88cdf4604b4763a29219f8071fdedb9a1fa19d997349003783"
+      },
+      {
+        "path": "cep/Baerista/js/bar.js",
+        "installAs": "SELF/js/bar.js",
+        "sha256": "2a9082d326e9fd0fc59d0216b23572a94ba961f86d429233bc384c7ca139a42b"
+      }
+    ]
   },
   "tools": [
     {
@@ -197,6 +261,167 @@
       ],
       "gumroad": null,
       "changelog": "Rewritten: finds shape paths and masks properly, keys Trim Paths per segment at every crossing, and mask segments become shape layers that follow the mask."
+    },
+    {
+      "id": "dockview",
+      "name": "DockView",
+      "version": "2.0.0",
+      "tier": "free",
+      "kind": "cep",
+      "dir": "cep/DockView",
+      "extensionId": "com.designpraise.dockview.panel",
+      "files": [
+        {
+          "path": "cep/DockView/CSXS/manifest.xml",
+          "installAs": "CEP/DockView/CSXS/manifest.xml",
+          "sha256": "58ba2245f0d6812fbd88c835ca0b85575214891d0d2ade44cc819cf8dc879bd4"
+        },
+        {
+          "path": "cep/DockView/client/index.html",
+          "installAs": "CEP/DockView/client/index.html",
+          "sha256": "27d87fa8c9b48ac5addda6a29b8b13f74137ddecf6dd5f6df17633e623c81c52"
+        },
+        {
+          "path": "cep/DockView/client/main.js",
+          "installAs": "CEP/DockView/client/main.js",
+          "sha256": "b09025a0de1187dbe8b6cfebefe04b60f93bd7223e2e8cd585f6898f53d726ee"
+        },
+        {
+          "path": "cep/DockView/client/signin.html",
+          "installAs": "CEP/DockView/client/signin.html",
+          "sha256": "611c68986016f1aa3b37ea21fc1749786d0d88609dfc259ba23d6ad581ae128f"
+        },
+        {
+          "path": "cep/DockView/client/signin.js",
+          "installAs": "CEP/DockView/client/signin.js",
+          "sha256": "631dcf05f98d8a9ae91e774aeaeaca1c935f86eaef271c73d85534a0614560fd"
+        },
+        {
+          "path": "cep/DockView/client/style.css",
+          "installAs": "CEP/DockView/client/style.css",
+          "sha256": "ffcbe36728bfec4a0f22ca453e287657ec80b18dfe271bb646af030862b88f3c"
+        },
+        {
+          "path": "cep/DockView/client/lib/CSInterface.js",
+          "installAs": "CEP/DockView/client/lib/CSInterface.js",
+          "sha256": "3c45400984772b88cdf4604b4763a29219f8071fdedb9a1fa19d997349003783"
+        },
+        {
+          "path": "cep/DockView/dp/dp-brand.css",
+          "installAs": "CEP/DockView/dp/dp-brand.css",
+          "sha256": "1a9212c730467ba5f600695ce49348f7c4cac339bf0b498b9bf0c068eb18f241"
+        },
+        {
+          "path": "cep/DockView/dp/dp-brand.js",
+          "installAs": "CEP/DockView/dp/dp-brand.js",
+          "sha256": "baec73177d2340a559994e91fe5a1172cdcdf7f6e61bbcf678d063e65e9cbf2f"
+        },
+        {
+          "path": "cep/DockView/dp/fonts/DesignPraiseSans.woff2",
+          "installAs": "CEP/DockView/dp/fonts/DesignPraiseSans.woff2",
+          "sha256": "2217561b61b32021fd71203925f5966cb81fe02a8907a6790b4c930e047d3a91"
+        },
+        {
+          "path": "cep/DockView/dp/fonts/GoogleSansCode.woff2",
+          "installAs": "CEP/DockView/dp/fonts/GoogleSansCode.woff2",
+          "sha256": "98eee6fe6dc8f6341f80caf9c7e72a5241dd78188d403a12bc6aeb23a3e8c1a3"
+        },
+        {
+          "path": "cep/DockView/host/index.jsx",
+          "installAs": "CEP/DockView/host/index.jsx",
+          "sha256": "034dcb2fa5f1e4da5cf445430a5b8be0b33d1ab58b7832e04032492435068294"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Now includes LinkDock: saved links (star a page, open it from the drawer), fit-to-width for narrow docks, and open-in-browser for sites that refuse to load in a panel. Phase look, day and night."
+    },
+    {
+      "id": "dockdocs",
+      "name": "DockDocs",
+      "version": "1.1.0",
+      "tier": "free",
+      "kind": "cep",
+      "dir": "cep/DockDocs",
+      "extensionId": "com.designpraise.dockdocs.panel",
+      "files": [
+        {
+          "path": "cep/DockDocs/index.html",
+          "installAs": "CEP/DockDocs/index.html",
+          "sha256": "ae7186551820dd4a35d50622c0812e32922afafed8db670d20f714e57c91c140"
+        },
+        {
+          "path": "cep/DockDocs/CSXS/manifest.xml",
+          "installAs": "CEP/DockDocs/CSXS/manifest.xml",
+          "sha256": "1850e7fc5ef7edc7e97612938343f5d208d6baec4d12b031d4de58127b791b03"
+        },
+        {
+          "path": "cep/DockDocs/css/style.css",
+          "installAs": "CEP/DockDocs/css/style.css",
+          "sha256": "2fd400decdf872eadf93eeca9f66ace1de91d1c21009e9ec840b5df43b695cb5"
+        },
+        {
+          "path": "cep/DockDocs/dp/dp-brand.css",
+          "installAs": "CEP/DockDocs/dp/dp-brand.css",
+          "sha256": "1a9212c730467ba5f600695ce49348f7c4cac339bf0b498b9bf0c068eb18f241"
+        },
+        {
+          "path": "cep/DockDocs/dp/dp-brand.js",
+          "installAs": "CEP/DockDocs/dp/dp-brand.js",
+          "sha256": "baec73177d2340a559994e91fe5a1172cdcdf7f6e61bbcf678d063e65e9cbf2f"
+        },
+        {
+          "path": "cep/DockDocs/dp/fonts/DesignPraiseSans.woff2",
+          "installAs": "CEP/DockDocs/dp/fonts/DesignPraiseSans.woff2",
+          "sha256": "2217561b61b32021fd71203925f5966cb81fe02a8907a6790b4c930e047d3a91"
+        },
+        {
+          "path": "cep/DockDocs/dp/fonts/GoogleSansCode.woff2",
+          "installAs": "CEP/DockDocs/dp/fonts/GoogleSansCode.woff2",
+          "sha256": "98eee6fe6dc8f6341f80caf9c7e72a5241dd78188d403a12bc6aeb23a3e8c1a3"
+        },
+        {
+          "path": "cep/DockDocs/host/main.jsx",
+          "installAs": "CEP/DockDocs/host/main.jsx",
+          "sha256": "0bebaeaaba78c73fdaf1d307688c5cf9702843dcfb2e92284d40a8d7a0b1284f"
+        },
+        {
+          "path": "cep/DockDocs/icons/icon.png",
+          "installAs": "CEP/DockDocs/icons/icon.png",
+          "sha256": "5d95372c856dab91fc3448224b579e854dbf39a606bae9922ae93b6e1dd55dd0"
+        },
+        {
+          "path": "cep/DockDocs/js/CSInterface.js",
+          "installAs": "CEP/DockDocs/js/CSInterface.js",
+          "sha256": "3c45400984772b88cdf4604b4763a29219f8071fdedb9a1fa19d997349003783"
+        },
+        {
+          "path": "cep/DockDocs/js/main.js",
+          "installAs": "CEP/DockDocs/js/main.js",
+          "sha256": "2ca0f72cb35d9f7e17b8c778461e145b08144776ad03e89d8a3607873e226b92"
+        },
+        {
+          "path": "cep/DockDocs/js/mammoth.browser.min.js",
+          "installAs": "CEP/DockDocs/js/mammoth.browser.min.js",
+          "sha256": "09c5f57fe12e27f590a4657b3324689ae1fe61d97fa898a66e82590346c8759b"
+        },
+        {
+          "path": "cep/DockDocs/js/marked.min.js",
+          "installAs": "CEP/DockDocs/js/marked.min.js",
+          "sha256": "e479cd780b6f4fe1494c6b4087505fa987f27f5ba6e0730a588e8398a07ee6e1"
+        },
+        {
+          "path": "cep/DockDocs/js/pdf.min.js",
+          "installAs": "CEP/DockDocs/js/pdf.min.js",
+          "sha256": "978fd1b2d134a98e98966186a97777bebf87d8e770dadab1ece3687e21a5aa6c"
+        },
+        {
+          "path": "cep/DockDocs/js/pdf.worker.min.js",
+          "installAs": "CEP/DockDocs/js/pdf.worker.min.js",
+          "sha256": "38cde5311957b86bc3669f93e7d2566de333a90055ed6635bef60d9bf00e96f2"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Phase look with day and night themes, DesignPraise fonts and footer, update notices."
     }
   ]
 }

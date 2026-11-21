@@ -17,6 +17,39 @@ def build_core():
     core = open(os.path.join(ROOT, "lib", "dp-core.jsxinc"), encoding="utf-8").read()
     return re.sub(r'"@@PNG:([^@]+)@@"', lambda m: png_literal(m.group(1)), core)
 
+CEP_SKIP = {".debug", "README.md", ".DS_Store"}
+
+def build_cep(reg):
+    """Copy cep/_shared into each extension's dp/ folder, then list every file with its checksum."""
+    shared = os.path.join(ROOT, "cep", "_shared")
+    wordmark = open(os.path.join(ROOT, "cep", "Baerista", "img", "wordmark.svg"), encoding="utf-8").read()
+    wordmark = wordmark.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "")
+    entries = [t for t in reg["tools"] if t.get("kind") == "cep"]
+    if reg.get("bar", {}).get("dir"):
+        entries.append(reg["bar"])
+    for entry in entries:
+        ext_dir = os.path.join(ROOT, entry["dir"])
+        dp = os.path.join(ext_dir, "dp")
+        os.makedirs(os.path.join(dp, "fonts"), exist_ok=True)
+        for rel in ["dp-brand.css", "dp-brand.js", "fonts/DesignPraiseSans.woff2", "fonts/GoogleSansCode.woff2"]:
+            data = open(os.path.join(shared, rel), "rb").read()
+            if rel == "dp-brand.js":
+                data = data.decode("utf-8").replace("@@WORDMARK@@", wordmark).encode("utf-8")
+            open(os.path.join(dp, rel), "wb").write(data)
+        files = []
+        name = os.path.basename(entry["dir"])
+        prefix = "SELF" if entry is reg.get("bar") else "CEP/" + name
+        for folder, _, names in sorted(os.walk(ext_dir)):
+            for n in sorted(names):
+                if n in CEP_SKIP:
+                    continue
+                full = os.path.join(folder, n)
+                rel = os.path.relpath(full, ext_dir).replace(os.sep, "/")
+                files.append({"path": entry["dir"] + "/" + rel, "installAs": prefix + "/" + rel,
+                              "sha256": hashlib.sha256(open(full, "rb").read()).hexdigest()})
+        entry["files"] = files
+        print(f"built {entry['dir']}  {entry['version']}  {len(files)} files")
+
 def main():
     core = build_core()
     reg_path = os.path.join(ROOT, "registry.json")
@@ -43,6 +76,7 @@ def main():
                 if f["path"] == rel:
                     f["sha256"] = sha
             print(f"built {rel}  {entry['version']}  {sha[:12]}")
+    build_cep(reg)
     with open(reg_path, "w") as f:
         json.dump(reg, f, indent=2)
         f.write("\n")

@@ -1,0 +1,32 @@
+/* DesignPraise brand kit for CEP panels — copied into each extension's dp/ folder by build.py.
+   Edit cep/_shared/dp-brand.css, not the copies. */
+@font-face { font-family: "DesignPraise Sans"; src: url("fonts/DesignPraiseSans.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Google Sans Code"; src: url("fonts/GoogleSansCode.woff2") format("woff2"); font-weight: 300 800; }
+
+:root {
+  --violet: #6403ee; --lilac: #a57bff; --night: #1a0d3e; --amber: #ffa800; --volt: #03ee63; --magenta: #d903ee;
+  --out: cubic-bezier(.16, 1, .3, 1);
+  --sig: cubic-bezier(.7, 0, .2, 1);
+  --sans: "DesignPraise Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "Google Sans Code", ui-monospace, Menlo, monospace;
+}
+[data-theme="day"] {
+  --bg: #f7f5fc; --bg2: #ffffff; --card: #ffffff; --card2: #ece4fe; --ink: #1a0d3e; --mute: #4f4672;
+  --line: #e3ddf0; --accent: #6403ee; --onaccent: #ffffff; --danger: #c8235a; --field: #ffffff;
+}
+[data-theme="night"] {
+  --bg: #0b0520; --bg2: #120830; --card: #170b3a; --card2: #24135a; --ink: #f4f0ff; --mute: #b9b0d6;
+  --line: #33246a; --accent: #a57bff; --onaccent: #0b0520; --danger: #ff6a8a; --field: #0b0520;
+}
+
+.dp-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 6px 10px; border-top: 1px solid var(--line); background: var(--bg);
+  font: 10px var(--mono); color: var(--mute); flex: 0 0 auto;
+}
+.dp-foot .dp-ver { white-space: nowrap; }
+.dp-foot .dp-upd { color: var(--accent); cursor: pointer; text-decoration: none; margin-left: 6px; }
+.dp-foot .dp-mark { color: var(--ink); opacity: .55; height: 16px; display: inline-flex; cursor: pointer; transition: opacity .3s var(--out); }
+.dp-foot .dp-mark:hover { opacity: 1; }
+.dp-foot .dp-mark svg { height: 100%; width: auto; }
+.dp-foot .dp-mark svg .mute { fill: var(--mute); }

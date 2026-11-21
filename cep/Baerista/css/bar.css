@@ -1,6 +1,6 @@
 /* Baerista — Direction C (Phase) tokens. --p: 0 = day, 1 = night. */
-@font-face { font-family: "DesignPraise Sans"; src: url("../fonts/DesignPraiseSans.woff2") format("woff2"); font-weight: 100 900; }
-@font-face { font-family: "Google Sans Code"; src: url("../fonts/GoogleSansCode.woff2") format("woff2"); font-weight: 300 800; }
+@font-face { font-family: "DesignPraise Sans"; src: url("../dp/fonts/DesignPraiseSans.woff2") format("woff2"); font-weight: 100 900; }
+@font-face { font-family: "Google Sans Code"; src: url("../dp/fonts/GoogleSansCode.woff2") format("woff2"); font-weight: 300 800; }
 
 :root {
   --violet: #6403ee; --lilac: #a57bff; --night: #1a0d3e; --amber: #ffa800; --volt: #03ee63;

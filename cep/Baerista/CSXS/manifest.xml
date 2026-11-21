@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ExtensionManifest Version="7.0" ExtensionBundleId="com.designpraise.baerista" ExtensionBundleVersion="0.1.0" ExtensionBundleName="Baerista">
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.designpraise.baerista" ExtensionBundleVersion="0.2.0" ExtensionBundleName="Baerista">
   <ExtensionList>
-    <Extension Id="com.designpraise.baerista.panel" Version="0.1.0" />
+    <Extension Id="com.designpraise.baerista.panel" Version="0.2.0" />
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>
-      <Host Name="AEFT" Version="[16.0,99.9]" />
+      <Host Name="AEFT" Version="[22.0,99.9]" />
     </HostList>
     <LocaleList><Locale Code="All" /></LocaleList>
     <RequiredRuntimeList><RequiredRuntime Name="CSXS" Version="9.0" /></RequiredRuntimeList>

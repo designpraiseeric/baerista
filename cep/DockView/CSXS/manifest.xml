@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0" ExtensionBundleId="com.designpraise.dockview" ExtensionBundleVersion="2.0.0" ExtensionBundleName="DockView">
+  <ExtensionList>
+    <Extension Id="com.designpraise.dockview.panel" Version="2.0.0" />
+    <Extension Id="com.designpraise.dockview.signin" Version="2.0.0" />
+  </ExtensionList>
+  <ExecutionEnvironment>
+    <HostList>
+      <Host Name="AEFT" Version="[22.0,99.9]" />
+    </HostList>
+    <LocaleList>
+      <Locale Code="All" />
+    </LocaleList>
+    <RequiredRuntimeList>
+      <RequiredRuntime Name="CSXS" Version="9.0" />
+    </RequiredRuntimeList>
+  </ExecutionEnvironment>
+  <DispatchInfoList>
+    <Extension Id="com.designpraise.dockview.panel">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./client/index.html</MainPath>
+          <ScriptPath>./host/index.jsx</ScriptPath>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>true</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>Panel</Type>
+          <Menu>DockView</Menu>
+          <Geometry>
+            <Size>
+              <Height>640</Height>
+              <Width>420</Width>
+            </Size>
+            <MinSize>
+              <Height>300</Height>
+              <Width>260</Width>
+            </MinSize>
+            <MaxSize>
+              <Height>2600</Height>
+              <Width>2600</Width>
+            </MaxSize>
+          </Geometry>
+          <Icons></Icons>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+    <Extension Id="com.designpraise.dockview.signin">
+      <DispatchInfo>
+        <Resources>
+          <MainPath>./client/signin.html</MainPath>
+          <ScriptPath>./host/index.jsx</ScriptPath>
+        </Resources>
+        <Lifecycle>
+          <AutoVisible>false</AutoVisible>
+        </Lifecycle>
+        <UI>
+          <Type>ModelessDialog</Type>
+          <Geometry>
+            <Size>
+              <Height>760</Height>
+              <Width>520</Width>
+            </Size>
+            <MinSize>
+              <Height>400</Height>
+              <Width>360</Width>
+            </MinSize>
+            <MaxSize>
+              <Height>2200</Height>
+              <Width>1600</Width>
+            </MaxSize>
+          </Geometry>
+          <Icons></Icons>
+        </UI>
+      </DispatchInfo>
+    </Extension>
+  </DispatchInfoList>
+</ExtensionManifest>
