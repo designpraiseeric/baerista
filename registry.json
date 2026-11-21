@@ -165,6 +165,38 @@
       ],
       "gumroad": null,
       "changelog": "Now finds properties inside shape groups (it was checking a group type that doesn't exist) and no longer crashes when sorting."
+    },
+    {
+      "id": "textjam",
+      "name": "TextJam",
+      "version": "3.1.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/textjam/TextJam.jsx",
+          "installAs": "ScriptUI Panels/TextJam.jsx",
+          "sha256": "310953afa8f491c2b0e42dc55ef8cf87e3166c032c6dbf97fd8cd398c549d568"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Letters now land in their real places (they were all measured at the same spot). Spaces are skipped. Exact character ranges. Dockable, with Read layer to load slider values."
+    },
+    {
+      "id": "slicer",
+      "name": "Slicer",
+      "version": "2.0.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/slicer/Slicer.jsx",
+          "installAs": "ScriptUI Panels/Slicer.jsx",
+          "sha256": "9cac2952d586406e04d54c658fb475b22b7790c5e3c40f046c8e27e839f5aea0"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Rewritten: finds shape paths and masks properly, keys Trim Paths per segment at every crossing, and mask segments become shape layers that follow the mask."
     }
   ]
 }
