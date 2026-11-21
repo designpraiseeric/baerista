@@ -53,6 +53,118 @@
       ],
       "gumroad": null,
       "changelog": "Several notes, saved automatically. Copy to clipboard. Post as text layer, into the selected text layer, or as a comp or layer marker. A sketch per note; Sketch to Comp keeps proportions, smooths lines and rounds the ends."
+    },
+    {
+      "id": "bouncer",
+      "name": "Bouncer",
+      "version": "1.0.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/bouncer/Bouncer.jsx",
+          "installAs": "ScriptUI Panels/Bouncer.jsx",
+          "sha256": "f7bc13ab8052a43fda843be79086565c67418918930ea848b825ce3a4dc7f3c1"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "One tool for overshoot and bounce. Live mode adds an expression with sliders in Effect Controls; Bake mode writes a damped-spring curve between selected keyframes and always lands on the end key."
+    },
+    {
+      "id": "precompkit",
+      "name": "Precomp Kit",
+      "version": "1.0.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/precompkit/PrecompKit.jsx",
+          "installAs": "ScriptUI Panels/PrecompKit.jsx",
+          "sha256": "039f8aa131fec51e7c48601a9eacd0e382a97016e1565c2f09fd8d8827d2050d"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Deep Duplicate (keeps effects, masks, parenting and mattes), Sync Names in either direction, and Delete & Clean for unused sources."
+    },
+    {
+      "id": "auff",
+      "name": "Auff",
+      "version": "2.0.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/auff/Auff.jsx",
+          "installAs": "ScriptUI Panels/Auff.jsx",
+          "sha256": "4de207c71fb5fd8ae98ac777cf5242f59f7f4c31f2039ac28317d1bcdf447ac2"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Dockable. Choose which comps it affects, exempt layers by search or from the timeline, turn audio off or back on in one undo step. No longer stops on layers without audio."
+    },
+    {
+      "id": "compyle",
+      "name": "Compyle",
+      "version": "1.1.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/compyle/Compyle.jsx",
+          "installAs": "ScriptUI Panels/Compyle.jsx",
+          "sha256": "1f74bc1eb310adf2816fc27b29bf303c2219428eb284216f0682f9e29813335d"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Fixed Remove Selected, and closing the reduced project now never asks to save. Clear message if Reduce Project isn't available."
+    },
+    {
+      "id": "guided",
+      "name": "Let's Be Guided",
+      "version": "1.1.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/guided/LetsBeGuided.jsx",
+          "installAs": "ScriptUI Panels/LetsBeGuided.jsx",
+          "sha256": "3cd4ce5473fba5a2299782f14f5b029728d78eead5cc4803c3af67323460785c"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Guide files remember their comp size and can scale to a different-sized comp. Clearing guides is one undo step. Works on older After Effects builds."
+    },
+    {
+      "id": "footlogwork",
+      "name": "FootLogWork",
+      "version": "1.1.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/footlogwork/FootLogWork.jsx",
+          "installAs": "ScriptUI Panels/FootLogWork.jsx",
+          "sha256": "fd0b4fa16b419588df0e5a70b893c870dcfa9d265110dd36502a486e71b758f2"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Colour match samples a 16x16 grid in one pass (much faster, and each sample averages its cell). Now docks."
+    },
+    {
+      "id": "propup",
+      "name": "Prop Up",
+      "version": "1.1.0",
+      "tier": "free",
+      "kind": "scriptui-panel",
+      "files": [
+        {
+          "path": "tools/propup/PropUp.jsx",
+          "installAs": "ScriptUI Panels/PropUp.jsx",
+          "sha256": "17fec2ab6daa38b26205195df0ba0fca5a2a12cec2550276310330f0f78a844e"
+        }
+      ],
+      "gumroad": null,
+      "changelog": "Now finds properties inside shape groups (it was checking a group type that doesn't exist) and no longer crashes when sorting."
     }
   ]
 }
