@@ -151,13 +151,13 @@
         "path": "cep/_signed/Baerista/mac/signatures.xml",
         "installAs": "SELF/META-INF/signatures.xml",
         "platform": "mac",
-        "sha256": "342ef9df600b70a50a28daae1eeac44269269ffffaa8ff50f961c121b855fa93"
+        "sha256": "1f474bb2bc75dc1d4f13153bbb181d699d2fc1a45ab1310ed642633f169ca407"
       },
       {
         "path": "cep/_signed/Baerista/win/signatures.xml",
         "installAs": "SELF/META-INF/signatures.xml",
         "platform": "win",
-        "sha256": "48eef0120091fc32ba6f7b67a809ec80a6065c6cc0406da43620e471f170eaec"
+        "sha256": "f135e3975c17cac43d67ad505b705cb5b99e4edcc97a812b2e06134d7b68da9c"
       }
     ],
     "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
@@ -433,13 +433,13 @@
           "path": "cep/_signed/DockView/mac/signatures.xml",
           "installAs": "CEP/DockView/META-INF/signatures.xml",
           "platform": "mac",
-          "sha256": "bcb46c273b81a0ef0fbb9860cabe67c4125a07c8f49c13d9d62a9645659bef58"
+          "sha256": "b997a5c57e19947474d397cd211f98961db195ea2a636b727b1aa7722e919e28"
         },
         {
           "path": "cep/_signed/DockView/win/signatures.xml",
           "installAs": "CEP/DockView/META-INF/signatures.xml",
           "platform": "win",
-          "sha256": "52fe97e9052998fe753a0a4875e72f627d62a9d594a873248909cc523ee933a5"
+          "sha256": "613b671585cdd8747b631260f26fb5ed851ac737f5738c4837821a6307718600"
         }
       ],
       "gumroad": null,
@@ -538,13 +538,13 @@
           "path": "cep/_signed/DockDocs/mac/signatures.xml",
           "installAs": "CEP/DockDocs/META-INF/signatures.xml",
           "platform": "mac",
-          "sha256": "4fb71bce5b5b313ad59593802cb4c092ee778b61f4395e680ea9dc6fb0ec4f00"
+          "sha256": "bfaa0d0f2b4953f82aa79243aad7b741805a1a9f7ebbdbac78e3b18e0af25fbd"
         },
         {
           "path": "cep/_signed/DockDocs/win/signatures.xml",
           "installAs": "CEP/DockDocs/META-INF/signatures.xml",
           "platform": "win",
-          "sha256": "daad30f5d6421bdbe6ae78b364d926be66eb9ea117d94b516bfa7840a36e33bd"
+          "sha256": "09f21a4244923ad92599d1dc8c02fc362b4f9d811c186453dfce599c365b74e6"
         }
       ],
       "gumroad": null,
