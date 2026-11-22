@@ -13,7 +13,7 @@
 
 (function (thisObj) {
     var TOOL = "Bouncer";
-    var VERSION = "1.0.1";
+    var VERSION = "1.0.2";
     var SETTINGS = "DesignPraise_Bouncer";
     var TAG = "// Baerista · Bouncer";
 

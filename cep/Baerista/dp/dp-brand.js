@@ -45,6 +45,7 @@
     var mark = f.querySelector(".dp-mark");
     mark.innerHTML = WORDMARK;
     mark.addEventListener("click", function () { open(SITE); });
+    if (window.DPSeasonUI) { try { window.DPSeasonUI.mount(f); } catch (e) {} }
 
     // Tell the user about updates; Baerista installs them, otherwise point at the release.
     var show = function (entry) {

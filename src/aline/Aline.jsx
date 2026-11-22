@@ -1092,7 +1092,7 @@
         } return str;
     }
 
-    DP.footer(win, { id: "aline", name: "Aline", version: "2.1.1" });
+    DP.footer(win, { id: "aline", name: "Aline", version: "2.1.2" });
 
     if (win instanceof Window) { win.center(); win.show(); } else { win.layout.layout(true); }
 

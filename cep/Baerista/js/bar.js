@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var BAR_VERSION = "0.3.1";
+  var BAR_VERSION = "0.3.2";
   var ICON_BASE = "https://designpraiseeric.pages.dev/img/icons/";
   var REPO_RAW = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
   var SITE = "https://designpraiseeric.pages.dev/soon";
@@ -299,6 +299,7 @@
   applyTheme();
   inlineSVG("mark.svg", "mark");
   inlineSVG("wordmark.svg", "wordmark");
+  if (window.DPSeasonUI) { try { DPSeasonUI.mount(document.querySelector(".foot")); } catch (e) {} }
   evalHost("baerista_panelsFolder").then(function (p) { panelsFolder = p || ""; });
 
   function refresh() {

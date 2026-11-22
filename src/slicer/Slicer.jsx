@@ -13,7 +13,7 @@
 
 (function (thisObj) {
     var TOOL = "Slicer";
-    var VERSION = "2.0.0";
+    var VERSION = "2.0.1";
 
 //@@DP_CORE@@
 

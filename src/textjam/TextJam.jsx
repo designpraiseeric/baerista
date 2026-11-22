@@ -26,7 +26,7 @@
  */
 
 (function (thisObj) {
-var TOOL = "TextJam", VERSION = "3.1.0";
+var TOOL = "TextJam", VERSION = "3.1.1";
 
 //@@DP_CORE@@
 

@@ -1,5 +1,5 @@
 (function(panel) {
-    var TOOL = "Compyle", VERSION = "1.1.0";
+    var TOOL = "Compyle", VERSION = "1.1.1";
 
 //@@DP_CORE@@
     // ========== ES3 Polyfill for Array.indexOf ==========

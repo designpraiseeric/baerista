@@ -10,6 +10,8 @@
         var MARK_LILAC = "@@PNG:dp-mark_lilac_20.png@@";
         var MARK_WHITE = "@@PNG:dp-mark_white_20.png@@";
 
+        //@@DP_SEASONS@@
+
         function sh(cmd) { try { return system.callSystem(cmd) || ""; } catch (e) { return ""; } }
 
         function netAllowed() {
@@ -121,8 +123,44 @@
             try { badge.parent.layout.layout(true); } catch (e) {}
         }
 
+        function hexPen(g, hex) {
+            var n = parseInt(String(hex).replace("#", ""), 16);
+            return g.newPen(g.PenType.SOLID_COLOR, [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255], 1);
+        }
+
+        // Today's greeting (Christian year + Nigerian public days), or null.
+        // To preview a date: app.settings.saveSetting("DesignPraise_Updates", "season_date", "2026-12-25").
+        function season() {
+            var when = null;
+            try { if (app.settings.haveSetting(SECTION, "season_date")) when = DPSeasons.parse(app.settings.getSetting(SECTION, "season_date")); } catch (e) {}
+            try { return DPSeasons.get(when || new Date()); } catch (e2) { return null; }
+        }
+
+        /** A quiet one-line greeting above the footer on special days. Click it for the verse. */
+        function greeting(parent) {
+            var s = season();
+            if (!s) return null;
+            var row = parent.add("group");
+            row.orientation = "row";
+            row.alignment = ["fill", "bottom"];
+            row.alignChildren = ["left", "center"];
+            row.margins = [0, 4, 0, 0];
+            var t = row.add("statictext", undefined, s.title + "  \u00b7  " + s.ref);
+            t.alignment = ["fill", "center"];
+            t.helpTip = s.line + "\n\n\u201c" + s.verse + "\u201d\n\u2014 " + s.ref + " (KJV)";
+            try {
+                t.graphics.font = ScriptUI.newFont("dialog", "BOLD", 10);
+                t.graphics.foregroundColor = s.accent ? hexPen(t.graphics, s.accent) : t.graphics.newPen(t.graphics.PenType.SOLID_COLOR, [0.7, 0.7, 0.75], 1);
+            } catch (e) {}
+            t.addEventListener("click", function () {
+                alert(s.title + "\n\n" + s.line + "\n\n\u201c" + s.verse + "\u201d\n\u2014 " + s.ref + " (KJV)\n\nFrom DesignPraise");
+            });
+            return row;
+        }
+
         /** Adds the footer (update button + dp mark) to a ScriptUI container. */
         function footer(parent, meta) {
+            greeting(parent);
             var row = parent.add("group");
             row.orientation = "row";
             row.alignment = ["fill", "bottom"];
@@ -162,6 +200,6 @@
             return row;
         }
 
-        return { footer: footer, openURL: openURL, site: SITE };
+        return { footer: footer, openURL: openURL, site: SITE, season: season };
     })();
     // ── end DesignPraise core ──

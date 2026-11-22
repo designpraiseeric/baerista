@@ -52,10 +52,17 @@ def head(title, desc, icon="/favicon.svg"):
 </header>
 '''
 
+NEWS = '''<section class="news">
+  <div data-dp-news data-dp-news-topics="tools" data-title="Tool updates by email" data-lead="New tools and new versions of the ones you use, with what changed. Only when there’s something new."></div>
+</section>
+'''
+
 FOOT = '''<footer class="bottom"><span>© 2026 DesignPraise Studio, Lagos</span><span>Free tools, name your price</span></footer>
 </div>
 <script>document.getElementById("theme").onclick=function(){var r=document.documentElement,n=r.dataset.theme==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("dp-theme",n)}catch(e){}};</script>
 <script src="/tools/demos.js" defer></script>
+<script src="/js/seasons.js" defer></script>
+<script src="/js/dp-extras.js" defer></script>
 </body>
 </html>
 '''
@@ -107,6 +114,9 @@ def tool_page(tid, p, entry):
   <p class="note" style="margin-top:18px">{INSTALL[kind]}</p>
   {'' if not entry.get("changelog") else '<p class="note"><b>What’s new in ' + esc(version) + ':</b> ' + esc(entry["changelog"]) + '</p>'}
 </section>
+<section class="news">
+  <div data-dp-news data-dp-news-topics="tools" data-title="Tool updates by email" data-lead="New tools and new versions of the ones you use, with what changed. Only when there’s something new."></div>
+</section>
 </main>
 '''
     return out + FOOT
@@ -132,7 +142,7 @@ def index_page(reg_by_id):
   <div class="f b"><h3>{esc(p["name"])}</h3><p>{esc(p["lede"])}</p></div>
 </div></a>
 '''
-    out += "</div>\n</main>\n"
+    out += "</div>\n" + NEWS + "</main>\n"
     return out + FOOT.replace('<script src="/tools/demos.js" defer></script>\n', "")
 
 def main():

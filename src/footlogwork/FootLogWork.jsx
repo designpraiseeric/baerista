@@ -1,6 +1,6 @@
 
 (function (thisObj) {
-    var TOOL = "FootLogWork", VERSION = "1.1.0";
+    var TOOL = "FootLogWork", VERSION = "1.1.1";
 
 //@@DP_CORE@@
     // ---------- UI Construction ----------

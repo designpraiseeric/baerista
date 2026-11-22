@@ -15,6 +15,9 @@ def png_literal(name):
 
 def build_core():
     core = open(os.path.join(ROOT, "lib", "dp-core.jsxinc"), encoding="utf-8").read()
+    seasons = open(os.path.join(ROOT, "lib", "dp-seasons.js"), encoding="utf-8").read()
+    seasons = seasons.split("var DPSeasons", 1)[1].rsplit("if (typeof module", 1)[0]   # drop the header comment and the Node export
+    core = core.replace("//@@DP_SEASONS@@", "var DPSeasons" + seasons.rstrip())
     return re.sub(r'"@@PNG:([^@]+)@@"', lambda m: png_literal(m.group(1)), core)
 
 CEP_SKIP = {".debug", "README.md", ".DS_Store"}   # must match what the signing workflow strips
@@ -36,6 +39,9 @@ def build_cep(reg):
         ext_dir = os.path.join(ROOT, entry["dir"])
         dp = os.path.join(ext_dir, "dp")
         os.makedirs(os.path.join(dp, "fonts"), exist_ok=True)
+        # dp-season.js = the shared calendar (lib/dp-seasons.js) + the greeting strip.
+        season_js = open(os.path.join(ROOT, "lib", "dp-seasons.js"), "rb").read() + b"\n" + open(os.path.join(shared, "dp-season-ui.js"), "rb").read()
+        open(os.path.join(dp, "dp-season.js"), "wb").write(season_js)
         for rel in ["dp-brand.css", "dp-brand.js", "fonts/DesignPraiseSans.woff2", "fonts/GoogleSansCode.woff2"]:
             data = open(os.path.join(shared, rel), "rb").read()
             if rel == "dp-brand.js":

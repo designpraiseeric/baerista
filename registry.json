@@ -2,7 +2,7 @@
   "schema": 1,
   "bar": {
     "name": "Baerista",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "dir": "cep/Baerista",
     "extensionId": "com.designpraise.baerista.panel",
     "site": "https://designpraiseeric.pages.dev/soon",
@@ -10,12 +10,12 @@
       {
         "path": "cep/Baerista/index.html",
         "installAs": "SELF/index.html",
-        "sha256": "207f4efae3664f18e52a1e03acbeebbcebe173c515925020a979cbe238466330"
+        "sha256": "2c42a0b8766efa5838e4b7d67d1d1c341d966b66df7c175fcf103bfece0a407d"
       },
       {
         "path": "cep/Baerista/CSXS/manifest.xml",
         "installAs": "SELF/CSXS/manifest.xml",
-        "sha256": "cf95b9e5ea67603de6acc3427dbc98a6323544de3b4447c6d65cc510a3f64f1d"
+        "sha256": "7d348e808edaf681e007ef77e87b7b8fdad2374cb134448d61eb542b028f4ec1"
       },
       {
         "path": "cep/Baerista/css/bar.css",
@@ -30,7 +30,12 @@
       {
         "path": "cep/Baerista/dp/dp-brand.js",
         "installAs": "SELF/dp/dp-brand.js",
-        "sha256": "baec73177d2340a559994e91fe5a1172cdcdf7f6e61bbcf678d063e65e9cbf2f"
+        "sha256": "dadddbcb3c7e3d63c6f7db029809b550c455eaa1eabe297af8fa1f85264a88b3"
+      },
+      {
+        "path": "cep/Baerista/dp/dp-season.js",
+        "installAs": "SELF/dp/dp-season.js",
+        "sha256": "8ca8decd421d4dae8ae4ff373f4bfc2c97e365d318814d9b44fa4d4814027fd2"
       },
       {
         "path": "cep/Baerista/dp/fonts/DesignPraiseSans.woff2",
@@ -140,7 +145,7 @@
       {
         "path": "cep/Baerista/js/bar.js",
         "installAs": "SELF/js/bar.js",
-        "sha256": "e0c3055cd0c857acdac66f122cd071dd76e060950db1b20f2d2672e7ad7d298d"
+        "sha256": "aaa5a7b408c21f2d619f387a34f87ba0966d1b689203d9277a3c878cf0efcfb3"
       },
       {
         "path": "cep/_signed/Baerista/mac/signatures.xml",
@@ -155,205 +160,205 @@
         "sha256": "ad8214925d72d4b3aca3a08b05524a95c89fa00edc8c3a0664376113b9c9afdd"
       }
     ],
-    "changelog": "Every tool now shows its own icon. Unlock paid tools with your Gumroad licence key."
+    "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
   },
   "tools": [
     {
       "id": "aline",
       "name": "Aline",
-      "version": "2.1.1",
+      "version": "2.1.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/aline/Aline.jsx",
           "installAs": "ScriptUI Panels/Aline.jsx",
-          "sha256": "c362c78ae350874c5f5b22cb0af3e1269d7306a2e41a02711f03330510bfb921"
+          "sha256": "ecb6da30b2078613ea66229ee96f7d868c4a42a55530a05f24f78b1234859027"
         }
       ],
       "gumroad": "https://designpraiseeric.gumroad.com/l/wlaaw",
-      "changelog": "Update check and DesignPraise mark added. Same features as 2.1: line angle, custom reference point, Chain Drift with 15 ramps, Bounce Ease-In/Duration, Tangent Tighten."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "compensate",
       "name": "Compensate",
-      "version": "3.0.0",
+      "version": "3.0.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/compensate/Compensate.jsx",
           "installAs": "ScriptUI Panels/Compensate.jsx",
-          "sha256": "f886ebab7a37e19258b719cb89bdf29b7e99f1cffb43038dc0d9c8173b2baec5"
+          "sha256": "8fffbaa36cbdb16cdf8874832a3e45fe8656c87f8b19a2e00dc8486a2edd0334"
         }
       ],
       "gumroad": null,
-      "changelog": "Dockable panel. Drag mode: drag a precomp's out edge to add or remove frames. Fixed frame blending, early-ending layers, start-time offset and time-stretch with trims."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "notable",
       "name": "Notable",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/notable/Notable.jsx",
           "installAs": "ScriptUI Panels/Notable.jsx",
-          "sha256": "804b10a04aff82ead3a581d804da1d76e01fa2c90a4fe0f829264916b22dd31b"
+          "sha256": "b32840d998306d5a8f2d64844d058a9a4f773ff577885e28b9121297e5431b1b"
         }
       ],
       "gumroad": null,
-      "changelog": "Several notes, saved automatically. Copy to clipboard. Post as text layer, into the selected text layer, or as a comp or layer marker. A sketch per note; Sketch to Comp keeps proportions, smooths lines and rounds the ends."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "bouncer",
       "name": "Bouncer",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/bouncer/Bouncer.jsx",
           "installAs": "ScriptUI Panels/Bouncer.jsx",
-          "sha256": "10249422558df37d5fceafed0dd9ed796caa7c131ac255c5b1e9867f1cf96468"
+          "sha256": "598f0a376f203de06e6790b1acaa48a11d8657597ca87f002960f9ddd0a15a1b"
         }
       ],
       "gumroad": null,
-      "changelog": "Fixes Live mode on 2D layers: the expression no longer errors on Position. One tool for overshoot and bounce. Live mode adds an expression with sliders in Effect Controls; Bake mode writes a damped-spring curve between selected keyframes and always lands on the end key."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "precompkit",
       "name": "Precomp Kit",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/precompkit/PrecompKit.jsx",
           "installAs": "ScriptUI Panels/PrecompKit.jsx",
-          "sha256": "d2e015d6094bd6eb3f610269593491eb7e6b4d918e2e2043b6b1c2c722951f3e"
+          "sha256": "fd1c7bffa3538dd020820083334be7164349037039b1a838acd50e359f27145d"
         }
       ],
       "gumroad": null,
-      "changelog": "Deep Duplicate (keeps effects, masks, parenting and mattes), Sync Names in either direction, and Delete & Clean for unused sources."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "auff",
       "name": "Auff",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/auff/Auff.jsx",
           "installAs": "ScriptUI Panels/Auff.jsx",
-          "sha256": "3330c0894a128bd6f6ae77dcfaac2304f375609165d5f027b79d10b33acf76b4"
+          "sha256": "7424724ce73567d200fe12c80e3cdf49bce0988fd1ce41ace7195add75aca894"
         }
       ],
       "gumroad": null,
-      "changelog": "Dockable. Choose which comps it affects, exempt layers by search or from the timeline, turn audio off or back on in one undo step. No longer stops on layers without audio."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "compyle",
       "name": "Compyle",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/compyle/Compyle.jsx",
           "installAs": "ScriptUI Panels/Compyle.jsx",
-          "sha256": "bd44420b7908806e78de16cd35032552a1384cbf3359e4902126f1da86ee14f4"
+          "sha256": "040258f639cd5d168ff48cc42056cab470007c0e97ffb541a5923dcadabbfd95"
         }
       ],
       "gumroad": null,
-      "changelog": "Fixed Remove Selected, and closing the reduced project now never asks to save. Clear message if Reduce Project isn't available."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "guided",
       "name": "Let's Be Guided",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/guided/LetsBeGuided.jsx",
           "installAs": "ScriptUI Panels/LetsBeGuided.jsx",
-          "sha256": "fc4c8b022949d1ecfd02d8b80b1ce8d1daa6a24d9868405217663a34b6b11d6e"
+          "sha256": "294fe4955b4b79a5958d3cee4eddeaadd31d77b13c138a232e96181440a802e6"
         }
       ],
       "gumroad": null,
-      "changelog": "Guide files remember their comp size and can scale to a different-sized comp. Clearing guides is one undo step. Works on older After Effects builds."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "footlogwork",
       "name": "FootLogWork",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/footlogwork/FootLogWork.jsx",
           "installAs": "ScriptUI Panels/FootLogWork.jsx",
-          "sha256": "688f6c0d9edfc5d7b959cc13e746ea005ddf5c1bf095f305d2818ec429cbfe2d"
+          "sha256": "6a4f93d115602351c7c62d402a752af74b2c9a399655e318649bb5cf130496fb"
         }
       ],
       "gumroad": null,
-      "changelog": "Colour match samples a 16x16 grid in one pass (much faster, and each sample averages its cell). Now docks."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "propup",
       "name": "Prop Up",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/propup/PropUp.jsx",
           "installAs": "ScriptUI Panels/PropUp.jsx",
-          "sha256": "bbec6253854af31219083b1b386b4e6b55d4fd484ed078c9b6bf6a206946dad0"
+          "sha256": "220d365f991cd70eb1bd5aff2be7cc14d4a9154dfb762e81b73b31a28e5b8646"
         }
       ],
       "gumroad": null,
-      "changelog": "Now finds properties inside shape groups (it was checking a group type that doesn't exist) and no longer crashes when sorting."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "textjam",
       "name": "TextJam",
-      "version": "3.1.0",
+      "version": "3.1.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/textjam/TextJam.jsx",
           "installAs": "ScriptUI Panels/TextJam.jsx",
-          "sha256": "ad0b6dd557298783fdabab028e61c8eee56e944fef327463e63b44eaf3b1fc3b"
+          "sha256": "afe1c86a5797ee668f801066ac427ea6210d992f445edd47b15d4b9e4730ceb4"
         }
       ],
       "gumroad": null,
-      "changelog": "Letters now land in their real places (they were all measured at the same spot). Spaces are skipped. Exact character ranges. Dockable, with Read layer to load slider values."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "slicer",
       "name": "Slicer",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/slicer/Slicer.jsx",
           "installAs": "ScriptUI Panels/Slicer.jsx",
-          "sha256": "57db145367fb0a2d19d5556cad0bd5425a7dccd622372893983f138b68272779"
+          "sha256": "e469ec06ea22bed0b713f5318e9772ef72341b7ca4fc1dd2c91190b114995d1c"
         }
       ],
       "gumroad": null,
-      "changelog": "Rewritten: finds shape paths and masks properly, keys Trim Paths per segment at every crossing, and mask segments become shape layers that follow the mask."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
     },
     {
       "id": "dockview",
       "name": "DockView",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "tier": "free",
       "kind": "cep",
       "dir": "cep/DockView",
@@ -362,12 +367,12 @@
         {
           "path": "cep/DockView/CSXS/manifest.xml",
           "installAs": "CEP/DockView/CSXS/manifest.xml",
-          "sha256": "58ba2245f0d6812fbd88c835ca0b85575214891d0d2ade44cc819cf8dc879bd4"
+          "sha256": "d1861946e6759ec34688d13aa014bf9c9b0690c934d1ddde3d724f49a8211360"
         },
         {
           "path": "cep/DockView/client/index.html",
           "installAs": "CEP/DockView/client/index.html",
-          "sha256": "27d87fa8c9b48ac5addda6a29b8b13f74137ddecf6dd5f6df17633e623c81c52"
+          "sha256": "ae1d69038f4fa47a27a861fefbd9d9664c17fcc09a0e782aec46ff2d7da35922"
         },
         {
           "path": "cep/DockView/client/main.js",
@@ -402,7 +407,12 @@
         {
           "path": "cep/DockView/dp/dp-brand.js",
           "installAs": "CEP/DockView/dp/dp-brand.js",
-          "sha256": "baec73177d2340a559994e91fe5a1172cdcdf7f6e61bbcf678d063e65e9cbf2f"
+          "sha256": "dadddbcb3c7e3d63c6f7db029809b550c455eaa1eabe297af8fa1f85264a88b3"
+        },
+        {
+          "path": "cep/DockView/dp/dp-season.js",
+          "installAs": "CEP/DockView/dp/dp-season.js",
+          "sha256": "8ca8decd421d4dae8ae4ff373f4bfc2c97e365d318814d9b44fa4d4814027fd2"
         },
         {
           "path": "cep/DockView/dp/fonts/DesignPraiseSans.woff2",
@@ -433,12 +443,12 @@
         }
       ],
       "gumroad": null,
-      "changelog": "Now includes LinkDock: saved links (star a page, open it from the drawer), fit-to-width for narrow docks, and open-in-browser for sites that refuse to load in a panel. Phase look, day and night."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
     },
     {
       "id": "dockdocs",
       "name": "DockDocs",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "tier": "free",
       "kind": "cep",
       "dir": "cep/DockDocs",
@@ -447,12 +457,12 @@
         {
           "path": "cep/DockDocs/index.html",
           "installAs": "CEP/DockDocs/index.html",
-          "sha256": "ae7186551820dd4a35d50622c0812e32922afafed8db670d20f714e57c91c140"
+          "sha256": "1b3948237eaca02467dfde38318b757c1c20b119262c79aa977a598dbf6c8dce"
         },
         {
           "path": "cep/DockDocs/CSXS/manifest.xml",
           "installAs": "CEP/DockDocs/CSXS/manifest.xml",
-          "sha256": "1850e7fc5ef7edc7e97612938343f5d208d6baec4d12b031d4de58127b791b03"
+          "sha256": "93006d569b1d3559205dc5f1c3b8cb837c214d53f1bae318fe8376bc3be8b1f9"
         },
         {
           "path": "cep/DockDocs/css/style.css",
@@ -467,7 +477,12 @@
         {
           "path": "cep/DockDocs/dp/dp-brand.js",
           "installAs": "CEP/DockDocs/dp/dp-brand.js",
-          "sha256": "baec73177d2340a559994e91fe5a1172cdcdf7f6e61bbcf678d063e65e9cbf2f"
+          "sha256": "dadddbcb3c7e3d63c6f7db029809b550c455eaa1eabe297af8fa1f85264a88b3"
+        },
+        {
+          "path": "cep/DockDocs/dp/dp-season.js",
+          "installAs": "CEP/DockDocs/dp/dp-season.js",
+          "sha256": "8ca8decd421d4dae8ae4ff373f4bfc2c97e365d318814d9b44fa4d4814027fd2"
         },
         {
           "path": "cep/DockDocs/dp/fonts/DesignPraiseSans.woff2",
@@ -533,7 +548,7 @@
         }
       ],
       "gumroad": null,
-      "changelog": "Phase look with day and night themes, DesignPraise fonts and footer, update notices."
+      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
     }
   ]
 }
