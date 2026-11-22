@@ -151,13 +151,13 @@
         "path": "cep/_signed/Baerista/mac/signatures.xml",
         "installAs": "SELF/META-INF/signatures.xml",
         "platform": "mac",
-        "sha256": "a99f99efe66ccbfe021f73b93a2336109a2b4e02c8cc67b2d1cb2a578fe9d66f"
+        "sha256": "342ef9df600b70a50a28daae1eeac44269269ffffaa8ff50f961c121b855fa93"
       },
       {
         "path": "cep/_signed/Baerista/win/signatures.xml",
         "installAs": "SELF/META-INF/signatures.xml",
         "platform": "win",
-        "sha256": "ad8214925d72d4b3aca3a08b05524a95c89fa00edc8c3a0664376113b9c9afdd"
+        "sha256": "48eef0120091fc32ba6f7b67a809ec80a6065c6cc0406da43620e471f170eaec"
       }
     ],
     "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
@@ -433,13 +433,13 @@
           "path": "cep/_signed/DockView/mac/signatures.xml",
           "installAs": "CEP/DockView/META-INF/signatures.xml",
           "platform": "mac",
-          "sha256": "2d68e6165ddae99403529d9a8692994a5898b9ed75c6d01047b571fbc1eb2a4c"
+          "sha256": "bcb46c273b81a0ef0fbb9860cabe67c4125a07c8f49c13d9d62a9645659bef58"
         },
         {
           "path": "cep/_signed/DockView/win/signatures.xml",
           "installAs": "CEP/DockView/META-INF/signatures.xml",
           "platform": "win",
-          "sha256": "c77c0ec0a1fa6a980854927bb75af42cd4eb7bbc03190b51656d89cb75ae4ca8"
+          "sha256": "52fe97e9052998fe753a0a4875e72f627d62a9d594a873248909cc523ee933a5"
         }
       ],
       "gumroad": null,
@@ -538,13 +538,13 @@
           "path": "cep/_signed/DockDocs/mac/signatures.xml",
           "installAs": "CEP/DockDocs/META-INF/signatures.xml",
           "platform": "mac",
-          "sha256": "b7cbb08d026d589db1bca49fc6de458f68fd54e22dbf0797a23007f662de17b3"
+          "sha256": "4fb71bce5b5b313ad59593802cb4c092ee778b61f4395e680ea9dc6fb0ec4f00"
         },
         {
           "path": "cep/_signed/DockDocs/win/signatures.xml",
           "installAs": "CEP/DockDocs/META-INF/signatures.xml",
           "platform": "win",
-          "sha256": "dc765e33ff6f32b1e878d6f5f2535b1d554df632096739eaa41e4dd03af89d71"
+          "sha256": "daad30f5d6421bdbe6ae78b364d926be66eb9ea117d94b516bfa7840a36e33bd"
         }
       ],
       "gumroad": null,
