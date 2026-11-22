@@ -40,7 +40,8 @@ def build_cep(reg):
         dp = os.path.join(ext_dir, "dp")
         os.makedirs(os.path.join(dp, "fonts"), exist_ok=True)
         # dp-season.js = the shared calendar (lib/dp-seasons.js) + the greeting strip.
-        season_js = open(os.path.join(ROOT, "lib", "dp-seasons.js"), "rb").read() + b"\n" + open(os.path.join(shared, "dp-season-ui.js"), "rb").read()
+        season_js = b"\n".join(open(os.path.join(ROOT, *p), "rb").read() for p in
+                               (("lib", "dp-seasons.js"), ("lib", "dp-seasons-art.js"), ("cep", "_shared", "dp-season-ui.js")))
         open(os.path.join(dp, "dp-season.js"), "wb").write(season_js)
         for rel in ["dp-brand.css", "dp-brand.js", "fonts/DesignPraiseSans.woff2", "fonts/GoogleSansCode.woff2"]:
             data = open(os.path.join(shared, rel), "rb").read()

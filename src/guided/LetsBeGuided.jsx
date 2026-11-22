@@ -6,7 +6,7 @@
 
 (function(thisObj) {
     var scriptName = "Let's Be Guided";
-    var VERSION = "1.1.1";
+    var VERSION = "1.1.2";
 
 //@@DP_CORE@@
 

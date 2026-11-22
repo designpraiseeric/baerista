@@ -6,7 +6,7 @@
  */
 
 (function(thisObj) {
-    var TOOL = "Prop Up", VERSION = "1.1.1";
+    var TOOL = "Prop Up", VERSION = "1.1.2";
     var COLUMNS = 4;
 
 //@@DP_CORE@@

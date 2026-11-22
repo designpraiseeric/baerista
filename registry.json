@@ -2,7 +2,7 @@
   "schema": 1,
   "bar": {
     "name": "Baerista",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "dir": "cep/Baerista",
     "extensionId": "com.designpraise.baerista.panel",
     "site": "https://designpraiseeric.pages.dev/soon",
@@ -15,7 +15,7 @@
       {
         "path": "cep/Baerista/CSXS/manifest.xml",
         "installAs": "SELF/CSXS/manifest.xml",
-        "sha256": "7d348e808edaf681e007ef77e87b7b8fdad2374cb134448d61eb542b028f4ec1"
+        "sha256": "52425ae1e1e837c8698995dd6731c364c187bc0e8ab8b97bf490dc84416d6da3"
       },
       {
         "path": "cep/Baerista/css/bar.css",
@@ -35,7 +35,7 @@
       {
         "path": "cep/Baerista/dp/dp-season.js",
         "installAs": "SELF/dp/dp-season.js",
-        "sha256": "8ca8decd421d4dae8ae4ff373f4bfc2c97e365d318814d9b44fa4d4814027fd2"
+        "sha256": "fef0431e802a8cf80ddc47582160ad1fe69fc9dfa4555cacc9421d0bdba90a3e"
       },
       {
         "path": "cep/Baerista/dp/fonts/DesignPraiseSans.woff2",
@@ -145,7 +145,7 @@
       {
         "path": "cep/Baerista/js/bar.js",
         "installAs": "SELF/js/bar.js",
-        "sha256": "aaa5a7b408c21f2d619f387a34f87ba0966d1b689203d9277a3c878cf0efcfb3"
+        "sha256": "9a973ef40cf3acd3343f3ba412d779452512fd3e9aceefa999ea549c219857c6"
       },
       {
         "path": "cep/_signed/Baerista/mac/signatures.xml",
@@ -160,205 +160,205 @@
         "sha256": "48eef0120091fc32ba6f7b67a809ec80a6065c6cc0406da43620e471f170eaec"
       }
     ],
-    "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
+    "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
   },
   "tools": [
     {
       "id": "aline",
       "name": "Aline",
-      "version": "2.1.2",
+      "version": "2.1.3",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/aline/Aline.jsx",
           "installAs": "ScriptUI Panels/Aline.jsx",
-          "sha256": "ecb6da30b2078613ea66229ee96f7d868c4a42a55530a05f24f78b1234859027"
+          "sha256": "eb421cda55fb4a9d48388caefcecc37a195c43e57009e7347a9b31a14d3a7d33"
         }
       ],
       "gumroad": "https://designpraiseeric.gumroad.com/l/wlaaw",
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "compensate",
       "name": "Compensate",
-      "version": "3.0.1",
+      "version": "3.0.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/compensate/Compensate.jsx",
           "installAs": "ScriptUI Panels/Compensate.jsx",
-          "sha256": "8fffbaa36cbdb16cdf8874832a3e45fe8656c87f8b19a2e00dc8486a2edd0334"
+          "sha256": "be72779d2a4984fefbc877c7ea82444848c274ec3e3416df1a59b279691ae251"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "notable",
       "name": "Notable",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/notable/Notable.jsx",
           "installAs": "ScriptUI Panels/Notable.jsx",
-          "sha256": "b32840d998306d5a8f2d64844d058a9a4f773ff577885e28b9121297e5431b1b"
+          "sha256": "a57995f6dce8aeef175463475159bb3140116084f9421ea5f0a76237e9df004a"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "bouncer",
       "name": "Bouncer",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/bouncer/Bouncer.jsx",
           "installAs": "ScriptUI Panels/Bouncer.jsx",
-          "sha256": "598f0a376f203de06e6790b1acaa48a11d8657597ca87f002960f9ddd0a15a1b"
+          "sha256": "33a9a320b3ba1141fa697a06e1e451804e43178cbe082f3c37c0b25f7f1f32f5"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "precompkit",
       "name": "Precomp Kit",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/precompkit/PrecompKit.jsx",
           "installAs": "ScriptUI Panels/PrecompKit.jsx",
-          "sha256": "fd1c7bffa3538dd020820083334be7164349037039b1a838acd50e359f27145d"
+          "sha256": "b995c1871b680cb39516d377651e2b4578b6a098ec1a6788c1ee5559facfdc74"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "auff",
       "name": "Auff",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/auff/Auff.jsx",
           "installAs": "ScriptUI Panels/Auff.jsx",
-          "sha256": "7424724ce73567d200fe12c80e3cdf49bce0988fd1ce41ace7195add75aca894"
+          "sha256": "3502841e1e4ebd9efa96a5baf35c2a1f1bb8ae05efe18e07196a0fbb65b28759"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "compyle",
       "name": "Compyle",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/compyle/Compyle.jsx",
           "installAs": "ScriptUI Panels/Compyle.jsx",
-          "sha256": "040258f639cd5d168ff48cc42056cab470007c0e97ffb541a5923dcadabbfd95"
+          "sha256": "060fabb5da336108c656d6047d3d8c6142d5a8ea350540b5109be5c48ff86b7e"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "guided",
       "name": "Let's Be Guided",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/guided/LetsBeGuided.jsx",
           "installAs": "ScriptUI Panels/LetsBeGuided.jsx",
-          "sha256": "294fe4955b4b79a5958d3cee4eddeaadd31d77b13c138a232e96181440a802e6"
+          "sha256": "273663435abc45bdc94fd7d2cbce033d5d0aaccbe0324f8f7ffc31fe497ee82c"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "footlogwork",
       "name": "FootLogWork",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/footlogwork/FootLogWork.jsx",
           "installAs": "ScriptUI Panels/FootLogWork.jsx",
-          "sha256": "6a4f93d115602351c7c62d402a752af74b2c9a399655e318649bb5cf130496fb"
+          "sha256": "7e7b8596f1760fc14c557fe810eb48417b5dbb15b372644ef505871bfcca2984"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "propup",
       "name": "Prop Up",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/propup/PropUp.jsx",
           "installAs": "ScriptUI Panels/PropUp.jsx",
-          "sha256": "220d365f991cd70eb1bd5aff2be7cc14d4a9154dfb762e81b73b31a28e5b8646"
+          "sha256": "02aca26d3cb5f93401252a1cf8083fb49f0710da2259ca0aa27f9524eb4531b1"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "textjam",
       "name": "TextJam",
-      "version": "3.1.1",
+      "version": "3.1.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/textjam/TextJam.jsx",
           "installAs": "ScriptUI Panels/TextJam.jsx",
-          "sha256": "afe1c86a5797ee668f801066ac427ea6210d992f445edd47b15d4b9e4730ceb4"
+          "sha256": "46173473de03a66d924da96a16459a95d27bb2901acab3298741bbc535fe872e"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "slicer",
       "name": "Slicer",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "tier": "free",
       "kind": "scriptui-panel",
       "files": [
         {
           "path": "tools/slicer/Slicer.jsx",
           "installAs": "ScriptUI Panels/Slicer.jsx",
-          "sha256": "e469ec06ea22bed0b713f5318e9772ef72341b7ca4fc1dd2c91190b114995d1c"
+          "sha256": "9e848155e846c011bc5e223a7e32a63489b5e0f180ecc4794466afa5634c79d7"
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (hover or click it)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "dockview",
       "name": "DockView",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "tier": "free",
       "kind": "cep",
       "dir": "cep/DockView",
@@ -367,12 +367,12 @@
         {
           "path": "cep/DockView/CSXS/manifest.xml",
           "installAs": "CEP/DockView/CSXS/manifest.xml",
-          "sha256": "d1861946e6759ec34688d13aa014bf9c9b0690c934d1ddde3d724f49a8211360"
+          "sha256": "ce1e66035fddee0cf87d56c5e1bb9e761f5341e564017e44aaecfe77bbe36f0e"
         },
         {
           "path": "cep/DockView/client/index.html",
           "installAs": "CEP/DockView/client/index.html",
-          "sha256": "ae1d69038f4fa47a27a861fefbd9d9664c17fcc09a0e782aec46ff2d7da35922"
+          "sha256": "fd7366a1e56139682b8c6b38fc2999423c0e7ba62982a667356546bf3eae62f5"
         },
         {
           "path": "cep/DockView/client/main.js",
@@ -412,7 +412,7 @@
         {
           "path": "cep/DockView/dp/dp-season.js",
           "installAs": "CEP/DockView/dp/dp-season.js",
-          "sha256": "8ca8decd421d4dae8ae4ff373f4bfc2c97e365d318814d9b44fa4d4814027fd2"
+          "sha256": "fef0431e802a8cf80ddc47582160ad1fe69fc9dfa4555cacc9421d0bdba90a3e"
         },
         {
           "path": "cep/DockView/dp/fonts/DesignPraiseSans.woff2",
@@ -443,12 +443,12 @@
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     },
     {
       "id": "dockdocs",
       "name": "DockDocs",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "tier": "free",
       "kind": "cep",
       "dir": "cep/DockDocs",
@@ -457,12 +457,12 @@
         {
           "path": "cep/DockDocs/index.html",
           "installAs": "CEP/DockDocs/index.html",
-          "sha256": "1b3948237eaca02467dfde38318b757c1c20b119262c79aa977a598dbf6c8dce"
+          "sha256": "a974211eac3434adf07cd50973b72f178bd89ea43424b98905821a9168b63365"
         },
         {
           "path": "cep/DockDocs/CSXS/manifest.xml",
           "installAs": "CEP/DockDocs/CSXS/manifest.xml",
-          "sha256": "93006d569b1d3559205dc5f1c3b8cb837c214d53f1bae318fe8376bc3be8b1f9"
+          "sha256": "b96bf06dcb0335ee4f2305ee4e81b550cf371708c2ff00b54d4e29ab089ec826"
         },
         {
           "path": "cep/DockDocs/css/style.css",
@@ -482,7 +482,7 @@
         {
           "path": "cep/DockDocs/dp/dp-season.js",
           "installAs": "CEP/DockDocs/dp/dp-season.js",
-          "sha256": "8ca8decd421d4dae8ae4ff373f4bfc2c97e365d318814d9b44fa4d4814027fd2"
+          "sha256": "fef0431e802a8cf80ddc47582160ad1fe69fc9dfa4555cacc9421d0bdba90a3e"
         },
         {
           "path": "cep/DockDocs/dp/fonts/DesignPraiseSans.woff2",
@@ -548,7 +548,7 @@
         }
       ],
       "gumroad": null,
-      "changelog": "Greetings on Christian holy days and Nigerian public days, with a verse (click the line above the footer)."
+      "changelog": "Each special day now has its own picture and colours. New: Eid greetings for Muslim neighbours, Armed Forces Remembrance Day and Teachers' Day."
     }
   ]
 }

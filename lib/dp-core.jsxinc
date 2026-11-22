@@ -3,6 +3,7 @@
         var REGISTRY = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/registry.json";
         var RAW_BASE = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
         var SITE = "https://designpraiseeric.pages.dev/soon";
+        var ART_BASE = "https://designpraiseeric.pages.dev/img/seasons/icon/";
         var SECTION = "DesignPraise_Updates";
         var CHECK_EVERY_HOURS = 12;
         var IS_WIN = $.os.indexOf("Windows") !== -1;
@@ -123,6 +124,10 @@
             try { badge.parent.layout.layout(true); } catch (e) {}
         }
 
+        function lum(hex) {
+            var n = parseInt(String(hex || "#000").replace("#", ""), 16);
+            return (0.299 * ((n >> 16) & 255) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) / 255;
+        }
         function hexPen(g, hex) {
             var n = parseInt(String(hex).replace("#", ""), 16);
             return g.newPen(g.PenType.SOLID_COLOR, [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255], 1);
@@ -145,12 +150,29 @@
             row.alignment = ["fill", "bottom"];
             row.alignChildren = ["left", "center"];
             row.margins = [0, 4, 0, 0];
+            // The day's picture: downloaded once from the site into the user's data folder, shown from then on.
+            var key = s.id === "advent" ? "advent-" + Math.max(1, Math.min(4, s.week || 1)) : s.id;
+            var dir = Folder(Folder.userData.fsName + "/DesignPraise/seasons");
+            var png = File(dir.fsName + "/" + key + ".png");
+            if (png.exists && png.length > 100) {
+                try { var im = row.add("image", undefined, png); im.helpTip = s.title; } catch (eI) {}
+            } else if (netAllowed()) {
+                var cb = "__dpSeasonArt_" + key;
+                $.global[cb] = function () {
+                    try { if (!dir.exists) dir.create(); } catch (eD) {}
+                    sh((IS_WIN ? "curl.exe" : "curl") + ' -fsSL -m 6 -o "' + png.fsName + '" "' + ART_BASE + key + '.png"');
+                };
+                try { app.scheduleTask("try{$.global." + cb + "();}catch(e){}", 2500, false); } catch (eS) {}
+            }
             var t = row.add("statictext", undefined, s.title + "  \u00b7  " + s.ref);
             t.alignment = ["fill", "center"];
             t.helpTip = s.line + "\n\n\u201c" + s.verse + "\u201d\n\u2014 " + s.ref + " (KJV)";
             try {
                 t.graphics.font = ScriptUI.newFont("dialog", "BOLD", 10);
-                t.graphics.foregroundColor = s.accent ? hexPen(t.graphics, s.accent) : t.graphics.newPen(t.graphics.PenType.SOLID_COLOR, [0.7, 0.7, 0.75], 1);
+                // AE panels are dark: use the day's brightest colour so the line stays readable.
+                var pick = null, best = 0, cs = s.colors || [s.accent];
+                for (var ci = 0; ci < cs.length; ci++) { var L = lum(cs[ci]); if (L > best && L < 0.95) { best = L; pick = cs[ci]; } if (ci === 0 && L > 0.3) break; }
+                t.graphics.foregroundColor = pick ? hexPen(t.graphics, pick) : t.graphics.newPen(t.graphics.PenType.SOLID_COLOR, [0.7, 0.7, 0.75], 1);
             } catch (e) {}
             t.addEventListener("click", function () {
                 alert(s.title + "\n\n" + s.line + "\n\n\u201c" + s.verse + "\u201d\n\u2014 " + s.ref + " (KJV)\n\nFrom DesignPraise");

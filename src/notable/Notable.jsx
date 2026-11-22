@@ -16,7 +16,7 @@
 
 (function (thisObj) {
     var TOOL = "Notable";
-    var VERSION = "2.0.1";
+    var VERSION = "2.0.2";
 
 //@@DP_CORE@@
 

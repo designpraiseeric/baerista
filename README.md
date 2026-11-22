@@ -9,7 +9,8 @@ DesignPraise's After Effects toolbar, and the update feed for every tool in it.
 | `src/<id>/` | Tool sources. Each has one `//@@DP_CORE@@` line where the shared module goes. |
 | `lib/dp-core.jsxinc` | Shared ScriptUI module: the dp mark (links to the site) and the update check/installer. |
 | `cep/Baerista/` | The bar itself (CEP extension). |
-| `lib/dp-seasons.js` | Calendar of greetings (Christian year + Nigerian public days) shared by every tool, the bar and the website. |
+| `lib/dp-seasons.js` | Calendar of greetings (Christian year, Nigerian public days, Eid greetings for Muslim neighbours), each with its colours. Shared by every tool, the bar and the website. |
+| `lib/dp-seasons-art.js` | One original illustration per special day (SVG). `site/render_seasons.py` turns them into the site's PNG icons and email banners. |
 | `assets/` | Small PNG marks embedded into ScriptUI panels. |
 
 Paid tools are not stored here. They are served after a Gumroad licence check.
@@ -55,6 +56,7 @@ One-time setup:
 
 ## Seasonal greetings
 On special days every tool shows a one-line greeting above its footer; hover or click it for the verse. Panels (CEP) show the same as a strip that opens on click.
+- Pictures: panels and the site draw the SVG; ScriptUI tools download a 24 px PNG from the site (`img/seasons/icon/`) on the day and keep it in the user's data folder. After changing art or colours run `python3 site/render_seasons.py ../designpraiseeric-site` and copy `lib/dp-seasons-art.js` to the site's `js/seasons-art.js`.
 - Days and wording: `lib/dp-seasons.js` (keep it ES3 — ExtendScript runs it). `python3 build.py` puts it into every ScriptUI tool and into each panel's `dp/dp-season.js`. Copy it to the website's `js/seasons.js` too.
 - Tests: `node tests/seasons.test.js`.
 - Preview a date — ScriptUI: run `app.settings.saveSetting("DesignPraise_Updates","season_date","2026-12-25")` once (clear it with `""`); panels: `localStorage.setItem("dp.seasonDate","2026-12-25")` in the panel's debug console.

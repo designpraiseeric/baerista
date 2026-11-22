@@ -23,7 +23,7 @@
 
 (function (thisObj) {
     var TOOL = "Compensate";
-    var VERSION = "3.0.1";
+    var VERSION = "3.0.2";
     var SETTINGS_SECTION = "DesignPraise_Compensate";
 
 //@@DP_CORE@@

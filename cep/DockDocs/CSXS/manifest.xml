@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionManifest Version="7.0" ExtensionBundleId="com.designpraise.dockdocs"
-  ExtensionBundleVersion="1.1.1" ExtensionBundleName="DockDocs">
+  ExtensionBundleVersion="1.1.2" ExtensionBundleName="DockDocs">
   <ExtensionList>
-    <Extension Id="com.designpraise.dockdocs.panel" Version="1.1.1" />
+    <Extension Id="com.designpraise.dockdocs.panel" Version="1.1.2" />
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>

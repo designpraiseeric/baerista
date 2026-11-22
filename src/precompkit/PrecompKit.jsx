@@ -17,7 +17,7 @@
 
 (function (thisObj) {
     var TOOL = "Precomp Kit";
-    var VERSION = "1.0.1";
+    var VERSION = "1.0.2";
     var SETTINGS = "DesignPraise_PrecompKit";
 
 //@@DP_CORE@@

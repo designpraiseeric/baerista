@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  var BAR_VERSION = "0.3.2";
+  var BAR_VERSION = "0.3.3";
   var ICON_BASE = "https://designpraiseeric.pages.dev/img/icons/";
   var REPO_RAW = "https://raw.githubusercontent.com/designpraiseeric/baerista/main/";
   var SITE = "https://designpraiseeric.pages.dev/soon";

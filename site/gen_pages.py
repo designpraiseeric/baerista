@@ -62,6 +62,7 @@ FOOT = '''<footer class="bottom"><span>© 2026 DesignPraise Studio, Lagos</span>
 <script>document.getElementById("theme").onclick=function(){var r=document.documentElement,n=r.dataset.theme==="dark"?"light":"dark";r.dataset.theme=n;try{localStorage.setItem("dp-theme",n)}catch(e){}};</script>
 <script src="/tools/demos.js" defer></script>
 <script src="/js/seasons.js" defer></script>
+<script src="/js/seasons-art.js" defer></script>
 <script src="/js/dp-extras.js" defer></script>
 </body>
 </html>
