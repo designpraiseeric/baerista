@@ -60,3 +60,7 @@ On special days every tool shows a one-line greeting above its footer; hover or 
 - Days and wording: `lib/dp-seasons.js` (keep it ES3 — ExtendScript runs it). `python3 build.py` puts it into every ScriptUI tool and into each panel's `dp/dp-season.js`. Copy it to the website's `js/seasons.js` too.
 - Tests: `node tests/seasons.test.js`.
 - Preview a date — ScriptUI: run `app.settings.saveSetting("DesignPraise_Updates","season_date","2026-12-25")` once (clear it with `""`); panels: `localStorage.setItem("dp.seasonDate","2026-12-25")` in the panel's debug console.
+
+## License
+
+Code is MIT licensed (see [LICENSE](LICENSE)). Paid tools are not in this repo and are not covered by it.
